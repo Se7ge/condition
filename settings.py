@@ -5,7 +5,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('admin', 'antipov.serge@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -14,8 +14,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'condition',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'USER': 'condition_user',                      # Not used with sqlite3.
+        'PASSWORD': 'condition_password',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -28,7 +28,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Russia/Moscow'
+TIME_ZONE = 'Europe/Moscow'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'ckeditor',
+    'condition.helpers',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -131,9 +132,10 @@ INSTALLED_APPS = (
 
 CKEDITOR_CONFIGS = {
     'default': {
+	'skin': 'kama',
         'toolbar': 'Full',
-        'height': 300,
-        'width': 300,
+        'height': 400,
+        'width': 860,
     },
 }
 
