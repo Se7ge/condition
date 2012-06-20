@@ -1,13 +1,13 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block content %}
 <div class="ice-main-wapper" style="width:685px;">
 <div class="ice-main-item" style="display:block;">
 <div class="ice-description">
-<img src="{{ product.img }}" title="{{ product.title }}" alt="{{ product.title }}">
+{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.title }}" alt="{{ product.title }}">{% endif %}
 <h3 class="ice-title">{{ product.title }}</h3>
 <div class="ice-description2">
-<p>{{ product.description }}</p>
+<p>{{ product.description|safe }}</p>
  </div>
 </div>	 </div>
 </div>

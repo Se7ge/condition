@@ -6,7 +6,7 @@
 <h3 class="mod-title">{{ producer.name }}
 <em class="col-module-header-arrow"></em></h3>
 <div class="moduletable_content clearfix">
-{{ producer.description|safe}}
+{{ producer.description }}
 </div>
 </div>
 </div>
@@ -30,14 +30,15 @@
 <a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">{{ product.name }}</a></h4>
 <div class="carousel_content">
 <div class="padding jshopping_padding">
-<div class="iceTip" rel="{% if product.image %}{{ product.image.url }}{% endif %}" title="{{ product.name }}">
+<div class="iceTip" rel="{{ product.image.url }}" title="{{ product.name }}">
 <!--<div class="product_label">
 <img src="./images/new.png" alt="New">
 </div>-->
 <a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">
-{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.name }}" alt="{{ product.name }}" width="120px" height="75px">{% endif %}
+<img src="{{ product.image.url }}" title="{{ product.name }}" alt="{{ product.name }}" width="120px" height="75px">
 </a>
 </div
+<!--<div class="jshop_old_price">{{ product.price }}</div>-->
 <div class="jshop_price">{{ product.price }}</div>
 <div class="description">{{ product.announce }}</div>
 <!--<table class="review_mark"><tbody><tr><td>
