@@ -124,6 +124,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'ckeditor',
     'condition.helpers',
+    'condition.catalog',
+    'condition.news',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

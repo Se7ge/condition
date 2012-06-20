@@ -10,9 +10,11 @@ urlpatterns = patterns('',
     (r'^ckeditor/', include('ckeditor.urls')),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
     { 'document_root': os.path.join(os.path.dirname(__file__), 'static')}),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+    { 'document_root': os.path.join(os.path.dirname(__file__), 'media')}),
     # Examples:
-    # url(r'^$', 'condition.views.home', name='home'),
-    # url(r'^condition/', include('condition.foo.urls')),
+    url(r'^$', 'condition.views.index', name='index'),
+    url(r'^catalog/', include('condition.catalog.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
