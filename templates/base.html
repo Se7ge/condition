@@ -72,19 +72,19 @@ border-width: 0.82em;
 <ul class="lang-inline">
 <li class="lang-active" dir="ltr">
 <a href="/it_theshop/index.php/en/">
-<img src="./images/en.gif" alt="English (UK)" title="English (UK)" />	 </a>
+<img src="{{ STATIC_URL }}images/en.gif" alt="English (UK)" title="English (UK)" />	 </a>
 </li>
 <li class="" dir="ltr">
 <a href="/it_theshop/index.php/de/">
-<img src="./images/de.gif" alt="German" title="German" />	 </a>
+<img src="{{ STATIC_URL }}images/de.gif" alt="German" title="German" />	 </a>
 </li>
 <li class="" dir="ltr">
 <a href="/it_theshop/index.php/nl/">
-<img src="./images/nl.gif" alt="Dutch" title="Dutch" />	 </a>
+<img src="{{ STATIC_URL }}images/nl.gif" alt="Dutch" title="Dutch" />	 </a>
 </li>
 <li class="" dir="ltr">
 <a href="/it_theshop/index.php/sv/">
-<img src="./images/sv.gif" alt="Suedish" title="Suedish" />	 </a>
+<img src="{{ STATIC_URL }}images/sv.gif" alt="Suedish" title="Suedish" />	 </a>
 </li>
 </ul>
 
@@ -102,7 +102,7 @@ border-width: 0.82em;
 <div id="header" class="clearfix">
 <div class="wrapper">
 <div id="logo">
-<p><a href="/it_theshop"><img src="./images/logo.png" alt="IT TheShop - August 2011 JoomShopping Template" /></a></p>
+<p><a href="/it_theshop"><img src="{{ STATIC_URL }}images/logo.png" alt="IT TheShop - August 2011 JoomShopping Template" /></a></p>
 </div>
 <div id="cart">
 <div id="jshop_module_cart">
@@ -303,11 +303,14 @@ jQuery(this).find('ul').css({'visibility':'hidden'});
 
 <div class="custom" >
 <p>We accept all major credit cards as well as PayPal payments</p>
-<p style="text-align: center;"><img src="./images/cards.jpg" border="0" alt="Credit Cards" width="160" /></p></div>
+<p style="text-align: center;"><img src="{{ STATIC_URL }}images/cards.jpg" border="0" alt="Credit Cards" width="160" /></p></div>
 </div>
 </div>
 </div>
-</div> <!-- Left Column -->
+</div> 
+</div>
+</div>
+<!-- Left Column -->
 <!-- Content Inside -->
 <div id="content_inside">
 <!-- Middle Column -->
@@ -324,48 +327,6 @@ jQuery(this).find('ul').css({'visibility':'hidden'});
 </div>
 </div><!-- Middle Column -->
 </div><!-- Content Inside -->
-<!-- Bottom -->
-<div id="bottom" class="clearfix">
-<div class="width33 separator floatleft">
-<div class="moduletable ">
-<div class="moduletable ">
-<h3 class="mod-title">Joomla 1.7 Template
-<em class="col-module-header-arrow"></em></h3>
-<div class="moduletable_content clearfix">
-
-<div class="custom" >
-<p><img src="./images/image1.jpg" border="0" alt="Image" width="80" height="80" /> Stay updated with the latest technology! IT TheShop is the first released Joomla 1.7 Template by IceTheme Club.</p></div>
-</div>
-</div>
-</div>
-</div>
-<div class="width33 separator floatleft">
-<div class="moduletable ">
-<div class="moduletable ">
-<h3 class="mod-title">New IceCarosuel Mod
-<em class="col-module-header-arrow"></em></h3>
-<div class="moduletable_content clearfix">
-
-<div class="custom" >
-<p><img src="./images/image2.jpg" border="0" alt="Image" width="80" height="80" /> Maximum flexibility has never been easier for your website. The new IceCarosuel module will give your content another meaning!</p></div>
-</div>
-</div>
-</div>
-</div>
-<div class="width33 floatleft">
-<div class="moduletable ">
-<div class="moduletable ">
-<h3 class="mod-title">JoomShopping Ready!
-<em class="col-module-header-arrow"></em></h3>
-<div class="moduletable_content clearfix">
-
-<div class="custom" >
-<p><img src="./images/image3.jpg" border="0" alt="Image" width="80" height="80" /> Put your next E-commerce website online within the next 15 minutes. Everything's made ready with JoomShopping extension.</p></div>
-</div>
-</div>
-</div>
-</div>
-</div><!-- Bottom -->
 </div>
 </div><!-- Content -->
 <!-- Footer -->
@@ -414,7 +375,7 @@ jQuery(this).find('ul').css({'visibility':'hidden'});
 <em class="col-module-header-arrow"></em></h3>
 <div class="moduletable_content clearfix">
 <ul class="menu" id="connect">
-<li class="item-528"><a href="#41" ><img src="./images/icon_facebook.png" alt="Facebook Page" /><span class="image-title">Facebook Page</span> </a></li><li class="item-529"><a href="#42" ><img src="./images/icon_twitter.png" alt="Twitter Page" /><span class="image-title">Twitter Page</span> </a></li><li class="item-530"><a href="#43" ><img src="./images/icon_youtube.png" alt="YouTube Channel" /><span class="image-title">YouTube Channel</span> </a></li><li class="item-531"><a href="#44" ><img src="./images/icon_rss.png" alt="RSS Feeds" /><span class="image-title">RSS Feeds</span> </a></li></ul>
+<li class="item-528"><a href="#41" ><img src="{{ STATIC_URL }}images/icon_facebook.png" alt="Facebook Page" /><span class="image-title">Facebook Page</span> </a></li><li class="item-529"><a href="#42" ><img src="{{ STATIC_URL }}images/icon_twitter.png" alt="Twitter Page" /><span class="image-title">Twitter Page</span> </a></li><li class="item-530"><a href="#43" ><img src="{{ STATIC_URL }}images/icon_youtube.png" alt="YouTube Channel" /><span class="image-title">YouTube Channel</span> </a></li><li class="item-531"><a href="#44" ><img src="{{ STATIC_URL }}images/icon_rss.png" alt="RSS Feeds" /><span class="image-title">RSS Feeds</span> </a></li></ul>
 </div>
 </div>
 </div>
