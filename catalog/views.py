@@ -32,3 +32,13 @@ def show_product(request, id):
 	'types': Types.objects.all(),},
 	context_instance=RequestContext(request)
     )
+
+def show_type(request, id):
+    template_name = 'catalog/type.html'
+    return render_to_response(template_name,
+        {'producers': Producers.objects.all(),
+	'types': Types.objects.all(),
+        'type': Types.objects.get(pk=int(id)),
+        'products': Products.objects.filter(type_id = int(id))},
+        context_instance=RequestContext(request)
+    )
