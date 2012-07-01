@@ -39,6 +39,23 @@ def show_type(request, id):
         {'producers': Producers.objects.all(),
 	'types': Types.objects.all(),
         'type': Types.objects.get(pk=int(id)),
-        'products': Products.objects.filter(type_id = int(id))},
+        'products': Products.objects.select_related().filter(type_id = int(id))},
         context_instance=RequestContext(request)
     )
+
+def search(request):
+    template_name = 'catalog/search.html'
+    search = request.POST['search']
+    type_id = int(request.POST['type_id'])
+    if type_id:
+	products = Products.objects.select_related().filter(type_id = type_id, name__icontains=search)
+    else:
+	products = Products.objects.select_related().filter(name__icontains=search)
+
+    return render_to_response(template_name,
+        {'producers': Producers.objects.all(),
+        'types': Types.objects.all(),
+        'products': products,},
+        context_instance=RequestContext(request)
+    )
+

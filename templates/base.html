@@ -51,12 +51,13 @@ border-width: 0.82em;
 </head>
 <body class="">
 <div id="site_wrapper">
-<!-- Accessibility -->
+<!-- Accessibility 
 <ol id="accessibility">
 <li><a href="#nav-wrapper">Skip to Menu</a></li>
 <li><a href="#content">Skip to Content</a></li>
 <li><a href="#footer" >Skip to Footer</a></li>
-</ol><!-- Accessibility -->
+</ol>
+Accessibility -->
 <!-- TopBar -->
 <div id="topbar_wrapper">
 <div id="topbar">
@@ -110,18 +111,18 @@ border-width: 0.82em;
 <div id="jshop_module_cart">
 <div class="lof_jshop_top">
 <div class="lof_top_1">
-<span class="jshop_products">0&nbsp;Products</span>
-<span class="jshop_sum">0.00 EUR</span>
+<span class="jshop_products">Товары: 0</span>
+<span class="jshop_sum">0.00 RUR</span>
 </div>
 <div class="lof_top_2">
-<a class="jshop_viewcart" href="/it_theshop/index.php/en/joomshopping/cart/view">View Cart</a>
-<span class="jshop_readmore">Show Products</span>
+<a class="jshop_viewcart" href="/cart/view">Корзина</a>
+<!--<span class="jshop_readmore">Показать товары</span>-->
 </div>
 </div>
 <div class="lof_jshop_bottom" style="display:none;">
 <div class="lof_jshop_bottom_btn">
-<a class="lof_left" href = "/it_theshop/index.php/en/joomshopping/cart/view">View Cart</a>
-<a class="lofclose" href = "javascript:void(0)">Close</a>
+<a class="lof_left" href = "/cart/view">Корзина</a>
+<a class="lofclose" href = "javascript:void(0)">Закрыть</a>
 </div>
 </div>
 </div>
@@ -133,56 +134,22 @@ var pattern = /\S/;
 return ret = (pattern.test(value)) ? (true) : (false);
 }
 </script>
-<form name = "searchForm" method = "post" action="/it_theshop/index.php/en/joomshopping/search/result" onsubmit = "return isEmptyValue(jQuery('#jshop_search').val())">
+<form name = "searchForm" method = "post" action="/catalog/search/" onsubmit = "return isEmptyValue(jQuery('#jshop_search').val())">
+{% csrf_token %}
 <input type="hidden" name="setsearchdata" value="1">
-<input type = "text" class = "inputbox" name = "search" id = "jshop_search" size="30" onfocus="if (this.value=='Find Your Next Deal...') this.value='';" onblur="if (this.value=='') this.value='Find Your Next Deal...';" value="Find Your Next Deal..." />
+<input type = "text" class = "inputbox" name = "search" id = "jshop_search" size="30" onfocus="if (this.value=='Найти кондиционеры...') this.value='';" onblur="if (this.value=='') this.value='Найти кондиционеры...';" value="Найти кондиционеры..." />
 
-<span>Категории</span>
-<select id="category_id" name="category_id" class = "inputbox" size = "1" >
-<option value="0" selected="selected">All categories</option>
-<option value="1">Books</option>
-<option value="2">Cameras &amp; Photo</option>
-<option value="3">Cell Phones &amp; PDAs</option>
-<option value="4">Computers</option>
-<option value="14">-- Accessories</option>
-<option value="33">-- -- Mouse</option>
-<option value="34">-- -- Keyboards</option>
-<option value="35">-- -- Webcam Products</option>
-<option value="36">-- -- Computer Speakers</option>
-<option value="37">-- -- Wireless USB</option>
-<option value="38">-- -- Laptop Cases</option>
-<option value="5">-- Apple Computers</option>
-<option value="15">-- Desktop Computers</option>
-<option value="16">-- Drives</option>
-<option value="17">-- LCD Display</option>
-<option value="18">-- Memory</option>
-<option value="19">-- Printers &amp; Supplies</option>
-<option value="6">Clothing</option>
-<option value="26">-- Women's Tops</option>
-<option value="27">-- Men's Tops</option>
-<option value="28">-- Women's Bottoms</option>
-<option value="29">-- Men's Bottoms</option>
-<option value="30">-- Children</option>
-<option value="31">-- Men's Shoes</option>
-<option value="32">-- Women's Shoes</option>
-<option value="7">Health &amp; Beauty</option>
-<option value="8">Home &amp; Garden</option>
-<option value="9">Jewelry &amp; Watches</option>
-<option value="20">-- Pendants</option>
-<option value="21">-- Earrings</option>
-<option value="22">-- Bracelets</option>
-<option value="23">-- Rings</option>
-<option value="24">-- Men's Watches</option>
-<option value="25">-- Women's Watches</option>
-<option value="10">Movies &amp; Music</option>
-<option value="11">Software</option>
-<option value="12">Toys, Baby &amp; Kids</option>
-<option value="13">Video Games</option>
+<span>Типы</span>
+<select id="type_id" name="type_id" class = "inputbox" size = "1" style="width:200px;" >
+<option value="0">Все типы</option>
+{% if types %}
+{% for type in types %}
+<option value="{{ type.id }}">{{ type.name }}</option>
+{% endfor %}
+{% endif %}
 </select>
-<input type="checkbox" value="1" id="include_subcat" name="include_subcat" checked="checked" disabled="disabled" >
-<label for="include_subcat">Include subcategories</label>
-<input class = "button" type = "submit" value = "Go" />
-<a href="/it_theshop/index.php/en/joomshopping/search" id="jshopping_adv_search">Advanced search</a>
+<input class = "button" type = "submit" value = "Go" /><br/>
+<!--<a href="/catalog/search/">Расширенный поиск</a>-->
 </form>
 </div>
 <!-- Main Nav -->
@@ -337,11 +304,11 @@ jQuery(this).find('ul').css({'visibility':'hidden'});
 <div class="width25 separator floatleft">
 <div class="moduletable ">
 <div class="moduletable ">
-<h3 class="mod-title">Order Support
+<h3 class="mod-title">Заказ
 <em class="col-module-header-arrow"></em></h3>
 <div class="moduletable_content clearfix">
 <ul class="menu">
-<li class="item-513"><a href="#1" >Order Status</a></li><li class="item-514"><a href="#2" >Store Pickup</a></li><li class="item-515"><a href="#3" >Store Pickup</a></li><li class="item-516"><a href="#4" >Returns &amp; Refunds</a></li><li class="item-517"><a href="#5" >Customer Service</a></li></ul>
+<li class="item-517"><a href="/about/payment/" >Оплата и доставка</a></li>
 </div>
 </div>
 </div>
@@ -349,11 +316,12 @@ jQuery(this).find('ul').css({'visibility':'hidden'});
 <div class="width25 separator floatleft">
 <div class="moduletable ">
 <div class="moduletable ">
-<h3 class="mod-title">Product Support
+<h3 class="mod-title">Продукция
 <em class="col-module-header-arrow"></em></h3>
 <div class="moduletable_content clearfix">
 <ul class="menu">
-<li class="item-518"><a href="#11" >Installation &amp; Delivery</a></li><li class="item-519"><a href="#12" >Product Recalls</a></li><li class="item-520"><a href="#13" >Buy Back Program</a></li><li class="item-521"><a href="#14" >Trade-in Center</a></li><li class="item-522"><a href="#15" >Recycling</a></li></ul>
+<li class="item-518"><a href="/catalog/">Каталог продукции</a></li>
+<li class="item-519"><a href="/about/installation/" >Установка</a></li>
 </div>
 </div>
 </div>
@@ -361,11 +329,12 @@ jQuery(this).find('ul').css({'visibility':'hidden'});
 <div class="width25 separator floatleft">
 <div class="moduletable ">
 <div class="moduletable ">
-<h3 class="mod-title">Corporate Info
+<h3 class="mod-title">О компании
 <em class="col-module-header-arrow"></em></h3>
 <div class="moduletable_content clearfix">
 <ul class="menu">
-<li class="item-523"><a href="#21" >About TheShop</a></li><li class="item-524"><a href="#22" >Careers</a></li><li class="item-525"><a href="#23" >Sustainability</a></li><li class="item-526"><a href="#24" >Affiliate Program</a></li><li class="item-527"><a href="#25" >Contact Us</a></li></ul>
+<li class="item-523"><a href="/about/" >О нас</a></li>
+<li class="item-527"><a href="/about/contacts/" >Контакты</a></li></ul>
 </div>
 </div>
 </div>
@@ -377,7 +346,9 @@ jQuery(this).find('ul').css({'visibility':'hidden'});
 <em class="col-module-header-arrow"></em></h3>
 <div class="moduletable_content clearfix">
 <ul class="menu" id="connect">
-<li class="item-528"><a href="#41" ><img src="{{ STATIC_URL }}images/icon_facebook.png" alt="Facebook Page" /><span class="image-title">Facebook Page</span> </a></li><li class="item-529"><a href="#42" ><img src="{{ STATIC_URL }}images/icon_twitter.png" alt="Twitter Page" /><span class="image-title">Twitter Page</span> </a></li><li class="item-530"><a href="#43" ><img src="{{ STATIC_URL }}images/icon_youtube.png" alt="YouTube Channel" /><span class="image-title">YouTube Channel</span> </a></li><li class="item-531"><a href="#44" ><img src="{{ STATIC_URL }}images/icon_rss.png" alt="RSS Feeds" /><span class="image-title">RSS Feeds</span> </a></li></ul>
+<li class="item-528"><a href="#41" ><img src="{{ STATIC_URL }}images/icon_facebook.png" alt="Facebook Page" /><span class="image-title">Facebook Page</span> </a></li>
+<li class="item-529"><a href="#42" ><img src="{{ STATIC_URL }}images/icon_twitter.png" alt="Twitter Page" /><span class="image-title">Twitter Page</span> </a></li>
+</ul>
 </div>
 </div>
 </div>
@@ -391,20 +362,16 @@ jQuery(this).find('ul').css({'visibility':'hidden'});
 <p><a href="http://www.icetheme.com"><span>Joomla Template Designed by IceTheme</span></a></p>
 </div>-->
 <div id="copyrightmenu">
-<ul class="menu">
-<li class="item-532"><a href="#" >Terms of Use</a></li><li class="item-533"><a href="#" >Copyright</a></li><li class="item-534"><a href="#" >Privacy &amp; Policy</a></li></ul>
+<!--<ul class="menu">
+<li class="item-532"><a href="#" >Terms of Use</a></li><li class="item-533"><a href="#" >Copyright</a></li><li class="item-534"><a href="#" >Privacy &amp; Policy</a></li></ul>-->
 </div>
 <div id="copytext" class="floatleft">
-<div class="footer1">Copyright &#169; 2012 IT TheShop - August 2011 JoomShopping Template. All Rights Reserved.</div>
-<div class="footer2"><a href="http://www.joomla.org">Joomla!</a> is Free Software released under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License.</a></div>
+<div class="footer1">Copyright &#169; {% now "Y" %}</div>
 </div>
 <!--<script type="text/javascript">
 window.addEvent('domready',function() { new SmoothScroll({ duration: 800 }); })
 </script>-->
 <a id="go2top" href="#topbar" class="hasTip" title="Go to Top" ><span>Go to Top</span></a>
-<div id="fb-like">
-<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Ficetheme&amp;layout=standard&amp;show_faces=false&amp;width=960&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=30" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:960px; height:30px;" allowTransparency="true"></iframe>
-</div>
 </div>
 </div><!-- Copyright -->
 <!-- javascript code to make J! tooltips -->
