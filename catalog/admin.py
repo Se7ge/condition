@@ -21,7 +21,11 @@ class ProducersAdminForm(forms.ModelForm):
 
 class ProducersAdmin(admin.ModelAdmin):
     form = ProducersAdminForm
+    list_display = ('name', 'ordernum')
 
-admin.site.register(Types)
+class TypesAdmin(admin.ModelAdmin):
+    list_display = ('name', 'ordernum')
+
+admin.site.register(Types, TypesAdmin)
 admin.site.register(Products, ProductsAdmin)
 admin.site.register(Producers, ProducersAdmin)

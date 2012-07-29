@@ -13,11 +13,14 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'condition',                      # Or path to database file if using sqlite3.
-        'USER': 'condition_user',                      # Not used with sqlite3.
+        'NAME': 'nwclimatru',                      # Or path to database file if using sqlite3.
+        'USER': 'nwclimatru',                      # Not used with sqlite3.
         'PASSWORD': 'condition_password',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'OPTIONS': {
+    	    'init_command': 'SET names utf8',
+        }
     }
 }
 
@@ -81,7 +84,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'a#^43(^_xv*^rt25x%%=x^%+)d^l*mo^mn_-7qir2ah1*!_a=l'
+SECRET_KEY = 'a#^43(^_xv*^rt25x%%=x^%+)d^l*mo^mn_-7qir2ah1*!_a=1'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -107,10 +110,13 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+FILE_CHARSET = 'utf-8'
+DEFAULT_CHARSET='utf-8'
+
 ROOT_URLCONF = 'condition.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'condition.wsgi.application'
+#WSGI_APPLICATION = 'condition.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
@@ -132,6 +138,7 @@ INSTALLED_APPS = (
     'condition.helpers',
     'condition.catalog',
     'condition.news',
+    'south',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

@@ -8,24 +8,26 @@ from ckeditor.widgets import CKEditorWidget
 class Types(models.Model):
     name = models.CharField(max_length=50, blank=False, verbose_name=u'Название')
     description = models.TextField(blank=True, null=True, verbose_name=u'Описание')
+    ordernum = models.IntegerField(blank=True, default=0, verbose_name=u'Порядок вывода')
     
     def __unicode__(self):
 	return self.name
     
     class Meta:
-        ordering = ["name"]
+        ordering = ["ordernum"]
 	verbose_name = u'Тип'
 	verbose_name_plural = u'Типы'
 
 class Producers(models.Model):
     name = models.CharField(max_length=50, blank=False, verbose_name=u'Производитель')
     description = models.TextField(blank=True, null=True, verbose_name=u'Описание')
+    ordernum = models.IntegerField(blank=True, default=0, verbose_name=u'Порядок вывода')
 
     def __unicode__(self):
 	return self.name
 
     class Meta:
-	ordering = ["name"]
+	ordering = ["ordernum"]
 	verbose_name = u'Производитель'
 	verbose_name_plural = u'Производители'
 

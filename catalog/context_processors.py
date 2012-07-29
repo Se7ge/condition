@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf import settings
 from condition.catalog.models import Types, Producers, Products 
 
