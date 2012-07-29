@@ -1,0 +1,96 @@
+<div id="left-column">
+<div class="col-module ">
+<div class="col-module">
+<div class="col-module-header">
+<h3 class="mod-title">Производители кондиционеров</h3>
+<div class="col-module-header-arrow"></div>
+</div>
+<div class="col-module-content clearfix">
+<!--<script type="text/javascript">
+if(Browser.Engine.trident){
+var zIndexNumber = 1000;
+// Put your target element(s) in the selector below!
+$$('div').each(function(el,i){
+el.setStyle('z-index',zIndexNumber);
+zIndexNumber -= 10;
+});
+};
+</script>--> 
+<div class="lofmenu_jshopping">
+{% if producers %}
+<ul class='lofmenu'>
+{% for producer in producers %}
+<li class='lofitem1'>
+<a href='/catalog/producer/{{ producer.id }}/' ><span>{{ producer.name }} <!--<span class="counter">(9) </span>--></span></a>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+<script language="javascript">
+if(jQuery('.lofmenu_jshopping .lofmenu .lofitem1') ){
+jQuery('.lofmenu_jshopping .lofmenu .lofitem1').find('ul').css({'visibility':'hidden'});
+}
+jQuery(document).ready(function(){
+jQuery('.lofmenu_jshopping .lofmenu .lofitem1 ul').each(function(){
+jQuery(this).find('li:first').addClass('loffirst');
+})
+jQuery('.lofmenu_jshopping .lofmenu li').each(function(){
+jQuery(this).mouseenter(function(){
+jQuery(this).addClass('lofactive');
+jQuery(this).find('ul').css({'visibility':'visible'});
+jQuery(this).find('ul li ul').css({'visibility':'hidden'});
+});
+jQuery(this).mouseleave(function(){
+jQuery(this).removeClass('lofactive');
+jQuery(this).find('ul').css({'visibility':'hidden'});
+});
+});
+});
+</script> </div>
+</div>
+</div>
+<div class="col-module ">
+<div class="col-module-style1">
+<div class="col-module-header">
+<h3 class="mod-title">Типы кондиционеров</h3>
+<div class="col-module-header-arrow"></div>
+</div>
+<div class="col-module-content clearfix">
+<div class="lofmenu_jshopping">
+{% if types %}
+<ul class='lofmenu'>
+{% for type in types %}
+<li class='lofitem1'>
+<a href='/catalog/types/{{ type.id }}/' ><span>{{ type.name }} <!--<span class="counter">(9) </span>--></span></a>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+</div>
+</div>
+</div>
+<!--<div class="col-module ">
+<div class="col-module">
+<div class="col-module-content clearfix">
+<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Ficetheme&amp;width=220&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=true&amp;height=395" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:395px;" allowTransparency="true"></iframe>
+</div>
+</div>
+</div>-->
+<!--<div class="col-module ">
+<div class="col-module">
+<div class="col-module-header">
+<h3 class="mod-title">Payment Methods</h3>
+<div class="col-module-header-arrow"></div>
+</div>
+<div class="col-module-content clearfix">
+
+<div class="custom" >
+<p>We accept all major credit cards as well as PayPal payments</p>
+<p style="text-align: center;"><img src="{{ STATIC_URL }}images/cards.jpg" border="0" alt="Credit Cards" width="160" /></p></div>
+</div>
+</div>
+</div>-->
+</div> 
+</div>
+</div>
