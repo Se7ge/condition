@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
-from condition.catalog.models import Types, Producers, Products
+from condition.catalog.models import Types, Producers, Products, Series
 from django.http import HttpResponse, HttpResponseRedirect
 #from django.views.generic import TemplateView
 from django.shortcuts import render_to_response
@@ -20,7 +20,7 @@ def show_producer(request, id):
 	{'producer': Producers.objects.get(pk=int(id)),
 	'producers': Producers.objects.all(),
         'types': Types.objects.all(), 
-	'products': Products.objects.filter(producer_id = int(id))},
+	'series': Series.objects.filter(producer_id = int(id))},
         context_instance=RequestContext(request)
     )
 
@@ -39,7 +39,7 @@ def show_type(request, id):
         {'producers': Producers.objects.all(),
 	'types': Types.objects.all(),
         'type': Types.objects.get(pk=int(id)),
-        'products': Products.objects.select_related().filter(type_id = int(id))},
+        'series': Series.objects.select_related().filter(types_id = int(id))},
         context_instance=RequestContext(request)
     )
 
