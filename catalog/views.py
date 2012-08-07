@@ -16,11 +16,13 @@ def show_catalog(request):
 
 def show_producer(request, id):
     template_name = 'catalog/producer.html'
+    series = Series.objects.filter(producer_id = int(id))
     return render_to_response(template_name, 
 	{'producer': Producers.objects.get(pk=int(id)),
 	'producers': Producers.objects.all(),
-        'types': Types.objects.all(), 
-	'series': Series.objects.filter(producer_id = int(id))},
+        'types': Types.objects.all(),
+	'producers_types': Types.objects.filter(pk__in=series.values_list('types_id', flat=True)),
+	'series': series},
         context_instance=RequestContext(request)
     )
 
@@ -35,12 +37,27 @@ def show_product(request, id):
 
 def show_type(request, id):
     template_name = 'catalog/type.html'
+    series = Series.objects.select_related().filter(types_id = int(id))
     return render_to_response(template_name,
         {'producers': Producers.objects.all(),
+	'types_producers': Producers.objects.filter(pk__in=series.values_list('producer_id', flat=True)),
 	'types': Types.objects.all(),
         'type': Types.objects.get(pk=int(id)),
-        'series': Series.objects.select_related().filter(types_id = int(id))},
+        'series': series},
         context_instance=RequestContext(request)
+    )
+
+def show_series(request, type_id, producer_id):
+    template_name = 'catalog/series.html'
+    return render_to_response(template_name, 
+    	{'producer': Producers.objects.get(pk=int(producer_id)),
+	'type': Types.objects.get(pk=int(type_id)),
+	'producers': Producers.objects.all(),
+	'types': Types.objects.all(),
+	'series': Series.objects.select_related().filter(types_id=int(type_id), producer_id=int(producer_id)),
+	'products': Products.objects.select_related().filter(series__types_id=int(type_id), series__producer_id=int(producer_id)),
+	},
+	context_instance=RequestContext(request)
     )
 
 def search(request):
