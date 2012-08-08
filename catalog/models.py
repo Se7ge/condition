@@ -21,6 +21,7 @@ class Types(models.Model):
 class Producers(models.Model):
     name = models.CharField(max_length=50, blank=False, verbose_name=u'Производитель')
     description = models.TextField(blank=True, null=True, verbose_name=u'Описание')
+    image = models.ImageField(upload_to='images/catalog/', blank=True, verbose_name=u'Изображение', default="")
     ordernum = models.IntegerField(blank=True, default=0, verbose_name=u'Порядок вывода')
 
     def __unicode__(self):
