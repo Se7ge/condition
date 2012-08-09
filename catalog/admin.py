@@ -11,7 +11,7 @@ class ProductsAdminForm(forms.ModelForm):
 
 class ProductsAdmin(admin.ModelAdmin):
     form = ProductsAdminForm
-    list_display = ('name', 'price', 'area')
+    list_display = ('name', 'series', 'price', 'area')
     search_fields = ('name', 'description')
 
 class ProducersAdminForm(forms.ModelForm):

@@ -10,45 +10,32 @@
 {% if types_producers %}
 
 {% for producer in types_producers %}
-{% if forloop.first %}
-<!--<div class="moduletable ">
-	<div class="moduletable ">
-		<h3 class="mod-title">{{ product.producer_id.name }}<em class="col-module-header-arrow"></em></h3>		
-		<div class="moduletable_content clearfix">
-			<div id="icecarousel125" class="ice-carousel" style="height:335px; width:685px">
-				<div class="ice-main-wapper" style="height:335px;width:685px">
-					<div class="ice-main-item page-1">
--->					
-{% endif %}
-{% ifchanged producer.id %}
-
-{% if not forloop.first %}
-					</div> 
+{% if not forloop.first and forloop.counter|divisibleby:"3" %}
+					</div>
 				</div>
-				<!-- END MAIN CONTENT of ARTICLESCROLLER MODULE -->
 			</div>
 		</div>
 	</div>
 </div>
 {% endif %}
-
+{% if forloop.first or forloop.counter|divisibleby:"3" %}
 <div class="moduletable ">
-	<div class="moduletable ">
+	<div class="moduletable ">	
 		<div class="moduletable_content clearfix">
 			<div id="icecarousel125" class="ice-carousel" style="height:335px; width:685px">
-				<!-- MAIN CONTENT of ARTICLESCROLLER MODULE -->
 				<div class="ice-main-wapper" style="height:335px;width:685px">
 					<div class="ice-main-item page-1">
-{% endifchanged %}
 					
+{% endif %}
 						<div class="ice-row" style="width:33.2333333333%">
 							<div class="lof-inner">
-							<h4 class="heading"><a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{{ producer.name }}</a></h4>
-							<div class="carousel_content">
-								<div class="padding jshopping_padding">
-									<div class="iceTip" rel="{% if producer.image %}{{ producer.image.url }}{% endif %}" title="{{ producer.name }}">										
-										<a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{% if producer.image %}<img src="{{ producer.image.url }}" title="{{ producer.name }}" alt="{{ producer.name }}" width="120px" height="75px">{% endif %}</a>
-									</div
+								<h4 class="heading"><a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{{ producer.name }}</a></h4>
+								<div class="carousel_content">
+									<div class="padding jshopping_padding">
+										<div class="iceTip" rel="{% if producer.image %}{{ producer.image.url }}{% endif %}" title="{{ producer.name }}">										
+											<a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{% if producer.image %}<img src="{{ producer.image.url }}" title="{{ producer.name }}" alt="{{ producer.name }}" width="120px" height="75px">{% endif %}</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -56,14 +43,11 @@
 {% if forloop.last %}						
 					</div> 
 				</div>
-				<!-- END MAIN CONTENT of ARTICLESCROLLER MODULE -->
 			</div>
 		</div>
 	</div>
 </div>
 {% endif %}
-
 {% endfor %}
 {% endif %}
 {% endblock %}
-
