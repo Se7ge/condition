@@ -3,13 +3,13 @@
 {% block content %}
 <div class="moduletable ">
 	<div class="moduletable ">
-		<h3 class="mod-title">{{ type.name }} {{ producer.name }}<em class="col-module-header-arrow"></em></h3>
-		<div class="moduletable_content clearfix">{{ type.description|safe}}</div>
+		<h3 class="mod-title">Популярные товары<em class="col-module-header-arrow"></em></h3>
+<!--		<div class="moduletable_content clearfix">{{ type.description|safe}}</div>-->
 	</div>
 </div>
-{% if products %}
+{% if main_products %}
 
-{% for product in products %}
+{% for product in main_products %}
 {% if forloop.first %}
 <!--<div class="moduletable ">
 	<div class="moduletable ">
@@ -35,7 +35,7 @@
 <div class="moduletable ">
 	<div class="moduletable ">
 		<h3 class="mod-title">{{ product.series.name }}<em class="col-module-header-arrow"></em></h3>
-		<div class="moduletable_content clearfix">{{ product.series.description|safe}}</div>
+<!--		<div class="moduletable_content clearfix">{{ product.series.description|safe}}</div>-->
 		<div class="moduletable_content clearfix">
 			<div id="icecarousel125" class="ice-carousel" style="width:685px">
 				<!-- MAIN CONTENT of ARTICLESCROLLER MODULE -->

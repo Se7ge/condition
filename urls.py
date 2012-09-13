@@ -12,6 +12,8 @@ urlpatterns = patterns('',
     { 'document_root': os.path.join(os.path.dirname(__file__), 'static')}),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve',
     { 'document_root': os.path.join(os.path.dirname(__file__), 'media')}),
+    (r'^images/?P<path>.*$', 'django.views.static.serve', 
+    { 'document_root': os.path.join(os.path.dirname(__file__), 'images')}),
     # Examples:
     #url(r'^$', 'condition.views.index', name='index'),
     url(r'', include('condition.catalog.urls')),

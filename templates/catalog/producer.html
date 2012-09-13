@@ -10,7 +10,7 @@
 {% if producers_types %}
 
 {% for type in producers_types %}
-{% if not forloop.first and forloop.counter|divisibleby:"3" %}
+{% if not forloop.first and forloop.counter0|divisibleby:"3" %}
 					</div>
 				</div>
 			</div>
@@ -18,12 +18,12 @@
 	</div>
 </div>
 {% endif %}
-{% if forloop.first or forloop.counter|divisibleby:"3" %}
+{% if forloop.first or forloop.counter0|divisibleby:"3" %}
 <div class="moduletable ">
 	<div class="moduletable ">	
 		<div class="moduletable_content clearfix">
-			<div id="icecarousel125" class="ice-carousel" style="height:335px; width:685px">
-				<div class="ice-main-wapper" style="height:335px;width:685px">
+			<div id="icecarousel125" class="ice-carousel" style="width:685px">
+				<div class="ice-main-wapper" style="width:685px">
 					<div class="ice-main-item page-1">
 					
 {% endif %}
@@ -33,7 +33,7 @@
 								<div class="carousel_content">
 									<div class="padding jshopping_padding">
 										<div class="iceTip" rel="{% if type.image %}{{ type.image.url }}{% endif %}" title="{{ type.name }}">										
-											<a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ type.name }}">{% if type.image %}<img src="{{ type.image.url }}" title="{{ type.name }}" alt="{{ type.name }}" width="120px" height="75px">{% endif %}</a>
+											<a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ type.name }}">{% if type.image %}<img src="{{ type.image.url }}" title="{{ type.name }}" alt="{{ type.name }}">{% endif %}</a>
 										</div>
 									</div>
 								</div>

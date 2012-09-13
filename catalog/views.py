@@ -14,6 +14,15 @@ def show_catalog(request):
         context_instance=RequestContext(request)
    )
 
+def show_main(request):
+    template_name = 'catalog/show_main.html'
+    return render_to_response(template_name,
+    	{'producers': Producers.objects.all(),
+	'types': Types.objects.all(),
+	'main_products': Products.objects.filter(show_in_main=True).order_by("-raiting")[0:12]},
+	context_instance=RequestContext(request),
+    )
+
 def show_producer(request, id):
     template_name = 'catalog/producer.html'
     series = Series.objects.filter(producer_id = int(id))

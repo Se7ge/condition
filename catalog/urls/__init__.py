@@ -8,4 +8,5 @@ urlpatterns = patterns('condition.catalog.views',
     url(r'^catalog/(\d+)/(\d+)/$', 'show_series'),
     url(r'^catalog/search/$', 'search'),
     url(r'^catalog/$', 'show_catalog'),
+    url(r'^$','show_main'),
 )

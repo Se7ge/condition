@@ -22,8 +22,8 @@
 <div class="moduletable ">
 	<div class="moduletable ">	
 		<div class="moduletable_content clearfix">
-			<div id="icecarousel125" class="ice-carousel" style="height:335px; width:685px">
-				<div class="ice-main-wapper" style="height:335px;width:685px">
+			<div id="icecarousel125" class="ice-carousel" style="width:685px">
+				<div class="ice-main-wapper" style="width:685px">
 					<div class="ice-main-item page-1">
 					
 {% endif %}
@@ -33,7 +33,7 @@
 								<div class="carousel_content">
 									<div class="padding jshopping_padding">
 										<div class="iceTip" rel="{% if producer.image %}{{ producer.image.url }}{% endif %}" title="{{ producer.name }}">										
-											<a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{% if producer.image %}<img src="{{ producer.image.url }}" title="{{ producer.name }}" alt="{{ producer.name }}" width="120px" height="75px">{% endif %}</a>
+											<a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{% if producer.image %}<img src="{{ producer.image.url }}" title="{{ producer.name }}" alt="{{ producer.name }}">{% endif %}</a>
 										</div>
 									</div>
 								</div>
