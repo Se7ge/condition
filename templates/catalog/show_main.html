@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if top_text and top_text.content %}
+	<div class="mpduletable">
+		<div class="moduletable ">
+                	<h3 class="mod-title">{{ top_text.title }}</h3>
+			<div class="moduletable_content clearfix">{{ top_text.content|safe}}</div>
+	        </div>
+	</div>
+{% endif %}
 <div class="moduletable ">
 	<div class="moduletable ">
 		<h3 class="mod-title">Популярные товары<em class="col-module-header-arrow"></em></h3>
@@ -74,5 +82,14 @@
 
 {% endfor %}
 {% endif %}
+
+{% if bottom_text and bottom_text.content %}
+        <div class="mpduletable">
+                <div class="moduletable ">
+                        <div class="moduletable_content clearfix">{{ bottom_text.content|safe}}</div>
+                </div>
+        </div>
+{% endif %}
+
 {% endblock %}
 

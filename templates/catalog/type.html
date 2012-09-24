@@ -27,16 +27,16 @@
 					<div class="ice-main-item page-1">
 					
 {% endif %}
-						<div class="ice-row" style="width:33.2333333333%">
+						<div class="ice-row" style="width:33.2333333333%; margin-bottom:10px;">
 							<div class="lof-inner">
-								<h4 class="heading"><a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{{ producer.name }}</a></h4>
 								<div class="carousel_content">
 									<div class="padding jshopping_padding">
-										<div class="iceTip" rel="{% if producer.image %}{{ producer.image.url }}{% endif %}" title="{{ producer.name }}">										
+										<div class="shadow" rel="{% if producer.image %}{{ producer.image.url }}{% endif %}" title="{{ producer.name }}">										
 											<a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{% if producer.image %}<img src="{{ producer.image.url }}" title="{{ producer.name }}" alt="{{ producer.name }}">{% endif %}</a>
 										</div>
 									</div>
 								</div>
+								<h4 class="heading"><a target="_parent" href="/catalog/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{{ producer.name }}</a></h4>
 							</div>
 						</div>
 						
@@ -51,3 +51,4 @@
 {% endfor %}
 {% endif %}
 {% endblock %}
+

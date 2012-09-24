@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 #from django.views.generic import TemplateView
 from django.shortcuts import render_to_response
 from django.template import Template, context, RequestContext
+from django.contrib.flatpages.models import FlatPage
 
 def show_catalog(request):
     template_name = 'catalog/catalog.html'
@@ -19,7 +20,9 @@ def show_main(request):
     return render_to_response(template_name,
     	{'producers': Producers.objects.all(),
 	'types': Types.objects.all(),
-	'main_products': Products.objects.filter(show_in_main=True).order_by("-raiting")[0:12]},
+	'main_products': Products.objects.filter(show_in_main=True).order_by("-raiting")[0:12],
+	'top_text': FlatPage.objects.get(pk=5),
+        'bottom_text': FlatPage.objects.get(pk=6),},
 	context_instance=RequestContext(request),
     )
 
@@ -74,7 +77,7 @@ def search(request):
     search = request.POST['search']
     type_id = int(request.POST['type_id'])
     if type_id:
-	products = Products.objects.select_related().filter(type_id = type_id, name__icontains=search)
+	products = Products.objects.select_related().filter(series__types_id = type_id, name__icontains=search)
     else:
 	products = Products.objects.select_related().filter(name__icontains=search)
 
