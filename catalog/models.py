@@ -9,6 +9,7 @@ class Types(models.Model):
     name = models.CharField(max_length=50, blank=False, verbose_name=u'Название')
     description = models.TextField(blank=True, null=True, verbose_name=u'Описание')
     ordernum = models.IntegerField(blank=True, default=0, verbose_name=u'Порядок вывода')
+    image = models.ImageField(upload_to='images/catalog/', blank=True, verbose_name=u'Изображение', default="")
     
     def __unicode__(self):
 	return self.name
@@ -57,7 +58,7 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=10,blank=True, null=True, decimal_places=2, verbose_name=u'Цена')
     area = models.DecimalField(max_digits=5, blank=True, null=True, decimal_places=2, verbose_name=u'Площадь')
     active = models.BooleanField(verbose_name=u'Опубликован', blank=True)
-    show_in_main = models.BooleanField(verbose_name=u'Показывать на главной', blank=True)
+    show_in_main = models.BooleanField(verbose_name=u'Показывать на главной', blank=True, default=False)
     raiting = models.IntegerField(blank=True, default=0, verbose_name=u'Рейтинг товара')
 
     def __unicode__(self):

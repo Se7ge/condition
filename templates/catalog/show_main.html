@@ -51,6 +51,7 @@
 											<!--<div class="product_label"><img src="./images/new.png" alt="New"></div>-->
 											<a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.name }}" alt="{{ product.name }}">{% endif %}</a>
 										</div>
+										<div class="jshop_price">до {{ product.area|floatformat }} кв.м</div>
 										<div class="jshop_price">{{ product.price|floatformat }} руб</div>
 										<div class="description">{{ product.announce }}</div>
 										<!--<table class="review_mark"><tbody><tr><td><div class="stars_no_active" style="width:80px"><div class="stars_active" style="width:72px"></div></div> </td></tr></tbody></table>-->

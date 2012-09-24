@@ -52,7 +52,8 @@
 										<img src="./images/new.png" alt="New">
 										</div>-->
 										<a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.name }}" alt="{{ product.name }}" width="120px" height="75px">{% endif %}</a>
-									</div
+									</div>
+									<div class="jshop_price">до {{ product.area|floatformat }} кв.м</div>
 									<div class="jshop_price">{{ product.price }}</div>
 									<div class="description">{{ product.announce }}</div>
 									<!--<table class="review_mark"><tbody><tr><td>
