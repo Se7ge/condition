@@ -137,6 +137,8 @@ INSTALLED_APPS = (
     'ckeditor',
     'condition.helpers',
     'condition.catalog',
+    'condition.thermal',
+    'condition.ventilation',
     'condition.news',
     'south',
     # Uncomment the next line to enable the admin:

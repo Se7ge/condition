@@ -9,7 +9,7 @@
 {% if types %}
 
 {% for type in types %}
-{% if not forloop.first and forloop.counter0|divisibleby:"3" %}
+{% if not forloop.first and forloop.counter0|divisibleby:"2" %}
 					</div>
 				</div>
 			</div>
@@ -17,7 +17,7 @@
 	</div>
 </div>
 {% endif %}
-{% if forloop.first or forloop.counter0|divisibleby:"3" %}
+{% if forloop.first or forloop.counter0|divisibleby:"2" %}
 <div class="moduletable ">
 	<div class="moduletable ">	
 		<div class="moduletable_content clearfix">
@@ -26,7 +26,7 @@
 					<div class="ice-main-item page-1">
 {% endif %}
 					
-						<div class="ice-row" style="width:33.2333333333%">
+						<div class="ice-row" style="width:50%">
 							<div class="lof-inner">
 								<h4 class="heading"><a target="_parent" href="/catalog/types/{{ type.id }}/" title="{{ type.name }}">{{ type.name }}</a></h4>
 								<div class="carousel_content">
