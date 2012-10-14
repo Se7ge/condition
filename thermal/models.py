@@ -19,10 +19,26 @@ class Thermal_Types(models.Model):
 	verbose_name = u'Тип теплового оборудования'
 	verbose_name_plural = u'Типы теплового оборудования'
 
+class Thermal_Producers(models.Model):
+    name = models.CharField(max_length=50, blank=False, verbose_name=u'Производитель')
+    description = models.TextField(blank=True, null=True, verbose_name=u'Описание')
+    image = models.ImageField(upload_to='images/thermal/', blank=True, verbose_name=u'Изображение', default="")
+    ordernum = models.IntegerField(blank=True, default=0, verbose_name=u'Порядок вывода')
+    
+    def __unicode__(self):
+	return self.name
+
+    class Meta:
+        ordering = ["ordernum"]
+        verbose_name = u'Производитель'
+        verbose_name_plural = u'Производители'
+
+
 class Thermal_Products(models.Model):
     name = models.CharField(max_length=50, blank=False, verbose_name=u'Название')
 #    producer_id = models.ForeignKey(Producers, verbose_name=u'Производитель')
     type_id = models.ForeignKey(Thermal_Types, verbose_name=u'Тип')
+    producer = models.ForeignKey(Thermal_Producers, verbose_name=u'Производитель')
     announce = models.TextField(blank=True, null=True, verbose_name=u'Краткое описание')
     description = models.TextField(blank=True, null=True, verbose_name=u'Описание')
     image = models.ImageField(upload_to='images/thermal/', blank=True, verbose_name=u'Изображение')

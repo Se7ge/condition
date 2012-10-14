@@ -2,7 +2,7 @@
 from django import forms
 from django.contrib import admin
 from ckeditor.widgets import CKEditorWidget
-from condition.thermal.models import Thermal_Types, Thermal_Products
+from condition.thermal.models import Thermal_Types, Thermal_Producers, Thermal_Products
 
 class ProductsAdminForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
@@ -17,6 +17,10 @@ class ProductsAdmin(admin.ModelAdmin):
 class TypesAdmin(admin.ModelAdmin):
     list_display = ('name', 'ordernum')
 
+class ProducersAdmin(admin.ModelAdmin):
+    list_display = ('name', 'ordernum')
+
 admin.site.register(Thermal_Types, TypesAdmin)
 admin.site.register(Thermal_Products, ProductsAdmin)
+admin.site.register(Thermal_Producers, ProducersAdmin)
 

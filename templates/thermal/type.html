@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="moduletable ">
+	<div class="moduletable ">
+		<h3 class="mod-title">{{ type.name }}<em class="col-module-header-arrow"></em></h3>
+		<div class="moduletable_content clearfix">{{ type.description|safe}}</div>
+	</div>
+</div>
+{% if types_producers %}
+
+{% for producer in types_producers %}
+{% if not forloop.first and forloop.counter0|divisibleby:"3" %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% if forloop.first or forloop.counter0|divisibleby:"3" %}
+<div class="moduletable ">
+	<div class="moduletable ">	
+		<div class="moduletable_content clearfix">
+			<div id="icecarousel125" class="ice-carousel" style="width:685px">
+				<div class="ice-main-wapper" style="width:685px">
+					<div class="ice-main-item page-1">
+					
+{% endif %}
+						<div class="ice-row" style="width:33.2333333333%; margin-bottom:10px;">
+							<div class="lof-inner">
+								<div class="carousel_content">
+									<div class="padding jshopping_padding">
+										<div class="shadow" rel="{% if producer.image %}{{ producer.image.url }}{% endif %}" title="{{ producer.name }}">										
+											<a target="_parent" href="/thermal/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{% if producer.image %}<img src="{{ producer.image.url }}" title="{{ producer.name }}" alt="{{ producer.name }}">{% endif %}</a>
+										</div>
+									</div>
+								</div>
+								<h4 class="heading"><a target="_parent" href="/thermal/{{ type.id }}/{{ producer.id }}/" title="{{ producer.name }}">{{ producer.name }}</a></h4>
+							</div>
+						</div>
+						
+{% if forloop.last %}						
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endblock %}
+

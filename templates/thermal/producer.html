@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="moduletable ">
+	<div class="moduletable ">
+		<h3 class="mod-title">{{ producer.name }}<em class="col-module-header-arrow"></em></h3>
+		<div class="moduletable_content clearfix">{{ producer.description|safe}}</div>
+	</div>
+</div>
+{% if producers_types %}
+
+{% for type in producers_types %}
+{% if not forloop.first and forloop.counter0|divisibleby:"2" %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% if forloop.first or forloop.counter0|divisibleby:"2" %}
+<div class="moduletable ">
+	<div class="moduletable ">	
+		<div class="moduletable_content clearfix">
+			<div id="icecarousel125" class="ice-carousel" style="width:685px">
+				<div class="ice-main-wapper" style="width:685px">
+					<div class="ice-main-item page-1">
+					
+{% endif %}
+						<div class="ice-row" style="width:50%">
+							<div class="lof-inner">
+								<h4 class="heading"><a target="_parent" href="/thermal/{{ type.id }}/{{ producer.id }}/" title="{{ type.name }}">{{ type.name }}</a></h4>
+								<div class="carousel_content">
+									<div class="padding jshopping_padding">
+										<div class="iceTip" rel="{% if type.image %}{{ type.image.url }}{% endif %}" title="{{ type.name }}">										
+											<a target="_parent" href="/thermal/{{ type.id }}/{{ producer.id }}/" title="{{ type.name }}">{% if type.image %}<img src="{{ type.image.url }}" title="{{ type.name }}" alt="{{ type.name }}">{% endif %}</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+{% if forloop.last %}						
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endblock %}

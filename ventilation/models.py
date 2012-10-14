@@ -16,8 +16,8 @@ class Ventilation_Types(models.Model):
     
     class Meta:
         ordering = ["ordernum"]
-	verbose_name = u'Тип вентилятора'
-	verbose_name_plural = u'Типы вентиляторов'
+	verbose_name = u'Тип вентиляции'
+	verbose_name_plural = u'Типы вентиляции'
 
 class Ventilation_Products(models.Model):
     name = models.CharField(max_length=50, blank=False, verbose_name=u'Название')
@@ -36,5 +36,5 @@ class Ventilation_Products(models.Model):
 	return self.name
 
     class Meta:
-	verbose_name = u'Вентилятор'
-	verbose_name_plural = u'Вентиляторы'
+	verbose_name = u'Вентиляция'
+	verbose_name_plural = u'Вентиляция'

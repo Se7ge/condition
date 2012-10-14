@@ -17,7 +17,8 @@ urlpatterns = patterns('',
     # Examples:
     #url(r'^$', 'condition.views.index', name='index'),
     url(r'', include('condition.catalog.urls')),
-
+    url(r'', include('condition.thermal.urls')),
+    url(r'', include('condition.ventilation.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

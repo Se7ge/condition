@@ -67,7 +67,7 @@ def show_series(request, type_id, producer_id):
 	'producers': Producers.objects.all(),
 	'types': Types.objects.all(),
 	'series': Series.objects.select_related().filter(types_id=int(type_id), producer_id=int(producer_id)),
-	'products': Products.objects.select_related().filter(series__types_id=int(type_id), series__producer_id=int(producer_id)),
+	'products': Products.objects.select_related().filter(series__types_id=int(type_id), series__producer_id=int(producer_id)).order_by('-price'),
 	},
 	context_instance=RequestContext(request)
     )
