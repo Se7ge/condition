@@ -39,6 +39,7 @@ class Series(models.Model):
     producer = models.ForeignKey(Producers, verbose_name = u'Производитель', blank = False, default=0)
     types = models.ForeignKey(Types, verbose_name = u'Тип', blank = False, default=0)
     image = models.ImageField(upload_to='images/catalog/', blank=True, verbose_name=u'Изображение', default="")
+    ordernum = models.IntegerField(blank=True, default=0, verbose_name=u'Порядок вывода')
     def __unicode__(self):
     	return self.name
 
@@ -48,7 +49,7 @@ class Series(models.Model):
         verbose_name_plural = u'Серии'
 
 class Products(models.Model):
-    name = models.CharField(max_length=50, blank=False, verbose_name=u'Название')
+    name = models.CharField(max_length=250, blank=False, verbose_name=u'Название')
 #    producer_id = models.ForeignKey(Producers, verbose_name=u'Производитель')
 #    type_id = models.ForeignKey(Types, verbose_name=u'Тип')
     series = models.ForeignKey(Series, verbose_name = u'Серия', default=0)

@@ -35,7 +35,7 @@ class Thermal_Producers(models.Model):
 
 
 class Thermal_Products(models.Model):
-    name = models.CharField(max_length=50, blank=False, verbose_name=u'Название')
+    name = models.CharField(max_length=250, blank=False, verbose_name=u'Название')
 #    producer_id = models.ForeignKey(Producers, verbose_name=u'Производитель')
     type_id = models.ForeignKey(Thermal_Types, verbose_name=u'Тип')
     producer = models.ForeignKey(Thermal_Producers, verbose_name=u'Производитель')

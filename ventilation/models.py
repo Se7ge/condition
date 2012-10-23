@@ -20,7 +20,7 @@ class Ventilation_Types(models.Model):
 	verbose_name_plural = u'Типы вентиляции'
 
 class Ventilation_Products(models.Model):
-    name = models.CharField(max_length=50, blank=False, verbose_name=u'Название')
+    name = models.CharField(max_length=250, blank=False, verbose_name=u'Название')
 #    producer_id = models.ForeignKey(Producers, verbose_name=u'Производитель')
     type_id = models.ForeignKey(Ventilation_Types, verbose_name=u'Тип')
     announce = models.TextField(blank=True, null=True, verbose_name=u'Краткое описание')
