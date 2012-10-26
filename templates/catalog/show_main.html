@@ -9,12 +9,14 @@
 	        </div>
 	</div>
 {% endif %}
+{% if favorite_text and favorite_text.content %}
 <div class="moduletable ">
 	<div class="moduletable ">
-		<h3 class="mod-title">Популярные товары<em class="col-module-header-arrow"></em></h3>
-<!--		<div class="moduletable_content clearfix">{{ type.description|safe}}</div>-->
+		<h3 class="mod-title">{{ favorite_text.title }}<em class="col-module-header-arrow"></em></h3>
+		<div class="moduletable_content clearfix">{{ favorite_text.content|safe}}</div>
 	</div>
 </div>
+{% endif %}
 {% if main_products %}
 
 {% for product in main_products %}

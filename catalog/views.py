@@ -22,7 +22,9 @@ def show_main(request):
 	'types': Types.objects.all(),
 	'main_products': Products.objects.filter(show_in_main=True).order_by("-raiting")[0:12],
 	'top_text': FlatPage.objects.get(pk=5),
-        'bottom_text': FlatPage.objects.get(pk=6),},
+        'bottom_text': FlatPage.objects.get(pk=6),
+	'favorite_text': FlatPage.objects.get(pk=9),
+	},
 	context_instance=RequestContext(request),
     )
 
