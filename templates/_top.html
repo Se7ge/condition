@@ -12,7 +12,7 @@ Accessibility -->
 <div id="contact_nr">
 
 <div class="custom" >
-<p>Отдел продаж: 1-800-The-Shop</p>
+<p>Отдел продаж: (812) 960-28-60</p>
 </div>
 </div>
 <!--<div id="language">
@@ -105,12 +105,28 @@ return ret = (pattern.test(value)) ? (true) : (false);
 <ul id="icemegamenu">
 <li id="iceMenu_435" class="iceMenuLiLevel_1"><a href="/" class=" iceMenuTitle"><span class="icemega_title icemega_nosubtitle">Главная</span></a></li>
 <!--<li id="iceMenu_294" class="iceMenuLiLevel_1 parent"><a href="/about/" class=" iceMenuTitle"><span class="icemega_title">О компании</span><span class="icemega_desc">О нас!</span></a></li>-->
-<li id="iceMenu_480" class="iceMenuLiLevel_1 parent"><a href="/catalog/" class=" iceMenuTitle"><span class="icemega_title">Каталог продукции</span><span class="icemega_desc">Наши товары</span></a></li>
-<li id="iceMenu_536" class="iceMenuLiLevel_1 parent"><a href="/about/payment/" class=" iceMenuTitle"><span class="icemega_title">Оплата и доставка</span><span class="icemega_desc">Обратите внимание!</span></a></li>
-<li id="iceMenu_487" class="iceMenuLiLevel_1 parent"><a href="/about/installation/" class=" iceMenuTitle"><span class="icemega_title icemega_nosubtitle">Услуги</span></a></li>
+<li id="iceMenu_480" class="iceMenuLiLevel_1"><a href="/catalog/" class=" iceMenuTitle"><span class="icemega_title">Каталог продукции</span><span class="icemega_desc">Наши товары</span></a></li>
+<li id="iceMenu_536" class="iceMenuLiLevel_1"><a href="/about/payment/" class=" iceMenuTitle"><span class="icemega_title">Оплата и доставка</span><span class="icemega_desc">Обратите внимание!</span></a></li>
+<li id="iceMenu_487" class="iceMenuLiLevel_1 parent"><a href="/about/installation/" class="iceMenuTitle mainParentBtn mainMenuParentBtn"><span class="icemega_title icemega_nosubtitle">Услуги</span></a>
+{% if services %}
+<ul class="icesubMenu sub_level_1" style="width:282px">
+<li>
+<div style="float:left;width:270px" class="iceCols">
+<ul>
+{% for service in services %}
+<li id="iceMenu_{{ service.id }}" class="iceMenuLiLevel_2">
+<a href="/services/{{ service.id }}/" class="iceMenuTitle subParentBtn mainMenuParentBtnFocused subMenuParentBtn" tabindex="-1"><span class="icemega_title icemega_nosubtitle">{{ service.name }}</span></a>
+</li>
+{% endfor %}
+</ul>
+</div>
+</li>
+</ul>
+{% endif %}
+</li>
 <li id="iceMenu_503" class="iceMenuLiLevel_1"><a href="/about/contacts/" class=" iceMenuTitle"><span class="icemega_title">Контакты</span><span class="icemega_desc">Свяжитесь с нами!</span></a></li>
 </ul></div>
-<!--<script type="text/javascript">
+<script type="text/javascript" defer>
 window.addEvent('domready', function() {
 if(document.getElementById('icemegamenu')!= null)
 var myMenu = new MenuMatic({id:'icemegamenu',
@@ -121,7 +137,7 @@ hideDelay:1000,
 opacity:95
 });
 });
-</script>-->
+</script>
 </div><!-- Main Nav -->
 <!-- BreadCrumbs -->
 </div>
