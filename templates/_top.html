@@ -15,30 +15,6 @@ Accessibility -->
 <p>Отдел продаж: (812) 960-28-60</p>
 </div>
 </div>
-<!--<div id="language">
-<div class="mod-languages">
-
-<ul class="lang-inline">
-<li class="lang-active" dir="ltr">
-<a href="/it_theshop/index.php/en/">
-<img src="{{ STATIC_URL }}images/en.gif" alt="English (UK)" title="English (UK)" />	 </a>
-</li>
-<li class="" dir="ltr">
-<a href="/it_theshop/index.php/de/">
-<img src="{{ STATIC_URL }}images/de.gif" alt="German" title="German" />	 </a>
-</li>
-<li class="" dir="ltr">
-<a href="/it_theshop/index.php/nl/">
-<img src="{{ STATIC_URL }}images/nl.gif" alt="Dutch" title="Dutch" />	 </a>
-</li>
-<li class="" dir="ltr">
-<a href="/it_theshop/index.php/sv/">
-<img src="{{ STATIC_URL }}images/sv.gif" alt="Suedish" title="Suedish" />	 </a>
-</li>
-</ul>
-
-</div>
-</div>-->
 <div id="topmenu">
 <ul class="menu">
 <!--<li class="item-505"><a href="/it_theshop/index.php/en/my-account" >My Account</a></li>-->
@@ -82,7 +58,7 @@ var pattern = /\S/;
 return ret = (pattern.test(value)) ? (true) : (false);
 }
 </script>
-<form name = "searchForm" method = "post" action="/catalog/search/">
+<form name = "searchForm" method = "post" action="/catalog/search/result/">
 {% csrf_token %}
 <input type="hidden" name="setsearchdata" value="1">
 <input type = "text" class = "inputbox" name = "search" id = "jshop_search" size="30" placeholder="Найти кондиционеры..." />
@@ -97,7 +73,7 @@ return ret = (pattern.test(value)) ? (true) : (false);
 {% endif %}
 </select>
 <input class = "button" type = "submit" value = "Поиск" /><br/>
-<!--<a href="/catalog/search/">Расширенный поиск</a>-->
+<a href="/catalog/search/">Расширенный поиск</a>
 </form>
 </div>
 <!-- Main Nav -->
