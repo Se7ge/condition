@@ -97,6 +97,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "condition.catalog.context_processors.get_settings",
     "condition.catalog.context_processors.show_catalog",
     "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.request",
 )
 
 MIDDLEWARE_CLASSES = (

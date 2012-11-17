@@ -83,7 +83,7 @@ def search(request):
 	_type = Types.objects.get(pk=int(type_id))
     else:
 	products = Products.objects.select_related().filter(name__icontains=search)
-	_type = null
+	_type = {} 
 
     return render_to_response(template_name,
         {'producers': Producers.objects.all(),
