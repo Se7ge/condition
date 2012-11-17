@@ -10,14 +10,22 @@
 {% if products %}
 
 {% for product in products %}
-{% if forloop.first %}
+{% if not forloop.first and forloop.counter0|divisibleby:"3" %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% if forloop.first or forloop.counter0|divisibleby:"3" %}
 <div class="moduletable ">
-	<div class="moduletable ">
+	<div class="moduletable ">	
 		<div class="moduletable_content clearfix">
 			<div id="icecarousel125" class="ice-carousel" style="width:685px">
-				<!-- MAIN CONTENT of ARTICLESCROLLER MODULE -->
 				<div class="ice-main-wapper" style="width:685px">
 					<div class="ice-main-item page-1">
+					
 {% endif %}
 						<div class="ice-row" style="width:33.2333333333%">
 							<div class="lof-inner">
