@@ -54,7 +54,7 @@ Accessibility -->
 <div id="logo">
 <p><a href="/" style="display: block;height: 46px;line-height: 44px;font-size: 34px;color: black;text-decoration:none;text-shadow: 1px 1px 1px rgba(162, 162, 162, 1);"><!--<img src="{{ STATIC_URL }}images/logo.png" alt="Кондиционеры" />-->NWCLIMATE</a></p>
 </div>
-<div id="cart">
+<!--<div id="cart">
 <div id="jshop_module_cart">
 <div class="lof_jshop_top">
 <div class="lof_top_1">
@@ -63,8 +63,9 @@ Accessibility -->
 </div>
 <div class="lof_top_2">
 <a class="jshop_viewcart" href="/cart/">Корзина</a>
+-->
 <!--<span class="jshop_readmore">Показать товары</span>-->
-</div>
+<!--</div>
 </div>
 <div class="lof_jshop_bottom" style="display:none;">
 <div class="lof_jshop_bottom_btn">
@@ -73,7 +74,7 @@ Accessibility -->
 </div>
 </div>
 </div>
-</div>
+</div>-->
 <div id="search">
 <script type = "text/javascript">
 function isEmptyValue(value){
@@ -81,10 +82,10 @@ var pattern = /\S/;
 return ret = (pattern.test(value)) ? (true) : (false);
 }
 </script>
-<form name = "searchForm" method = "post" action="/catalog/search/" onsubmit = "return isEmptyValue(jQuery('#jshop_search').val())">
+<form name = "searchForm" method = "post" action="/catalog/search/">
 {% csrf_token %}
 <input type="hidden" name="setsearchdata" value="1">
-<input type = "text" class = "inputbox" name = "search" id = "jshop_search" size="30" onfocus="if (this.value=='Найти кондиционеры...') this.value='';" onblur="if (this.value=='') this.value='Найти кондиционеры...';" value="Найти кондиционеры..." />
+<input type = "text" class = "inputbox" name = "search" id = "jshop_search" size="30" placeholder="Найти кондиционеры..." />
 
 <span>Типы</span>
 <select id="type_id" name="type_id" class = "inputbox" size = "1" style="width:200px;" >
@@ -95,7 +96,7 @@ return ret = (pattern.test(value)) ? (true) : (false);
 {% endfor %}
 {% endif %}
 </select>
-<input class = "button" type = "submit" value = "Go" /><br/>
+<input class = "button" type = "submit" value = "Поиск" /><br/>
 <!--<a href="/catalog/search/">Расширенный поиск</a>-->
 </form>
 </div>
@@ -107,7 +108,7 @@ return ret = (pattern.test(value)) ? (true) : (false);
 <!--<li id="iceMenu_294" class="iceMenuLiLevel_1 parent"><a href="/about/" class=" iceMenuTitle"><span class="icemega_title">О компании</span><span class="icemega_desc">О нас!</span></a></li>-->
 <li id="iceMenu_480" class="iceMenuLiLevel_1"><a href="/catalog/" class=" iceMenuTitle"><span class="icemega_title">Каталог продукции</span><span class="icemega_desc">Наши товары</span></a></li>
 <li id="iceMenu_536" class="iceMenuLiLevel_1"><a href="/about/payment/" class=" iceMenuTitle"><span class="icemega_title">Оплата и доставка</span><span class="icemega_desc">Обратите внимание!</span></a></li>
-<li id="iceMenu_487" class="iceMenuLiLevel_1 parent"><a href="/about/installation/" class="iceMenuTitle mainParentBtn mainMenuParentBtn"><span class="icemega_title icemega_nosubtitle">Услуги</span></a>
+<li id="iceMenu_487" class="iceMenuLiLevel_1 parent"><a class="iceMenuTitle mainParentBtn mainMenuParentBtn"><span class="icemega_title icemega_nosubtitle">Услуги</span></a>
 {% if services %}
 <ul class="icesubMenu sub_level_1" style="width:282px">
 <li>
