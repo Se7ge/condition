@@ -44,23 +44,24 @@
 					
 						<div class="ice-row" style="width:33.2333333333%">
 							<div class="lof-inner">
-							<h4 class="heading"><a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">{{ product.name }}</a></h4>
-							<div class="carousel_content">
-								<div class="padding jshopping_padding">
-									<div class="iceTip" rel="{% if product.image %}{{ product.image.url }}{% endif %}" title="{{ product.name }}">
-										<!--<div class="product_label">
-										<img src="./images/new.png" alt="New">
-										</div>-->
-										<a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.name }}" alt="{{ product.name }}" width="120px" height="75px">{% endif %}</a>
+								<h4 class="heading"><a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">{{ product.name }}</a></h4>
+								<div class="carousel_content">
+									<div class="padding jshopping_padding">
+										<div class="iceTip" rel="{% if product.image %}{{ product.image.url }}{% endif %}" title="{{ product.name }}">
+											<!--<div class="product_label">
+											<img src="./images/new.png" alt="New">
+											</div>-->
+											<a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.name }}" alt="{{ product.name }}" width="120px" height="75px">{% endif %}</a>
+										</div>
+										<div class="jshop_price">до {{ product.area|floatformat }} кв.м</div>
+										<div class="jshop_price">{{ product.price }}</div>
+										<div class="description">{{ product.announce }}</div>
+										<!--<table class="review_mark"><tbody><tr><td>
+										<div class="stars_no_active" style="width:80px"><div class="stars_active" style="width:72px"></div></div> </td></tr></tbody></table>-->
+										<!--<div class="count_commentar">
+										Comments (13) </div>-->
+										<p class="readmore"><a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">Подробнее</a></p>
 									</div>
-									<div class="jshop_price">до {{ product.area|floatformat }} кв.м</div>
-									<div class="jshop_price">{{ product.price }}</div>
-									<div class="description">{{ product.announce }}</div>
-									<!--<table class="review_mark"><tbody><tr><td>
-									<div class="stars_no_active" style="width:80px"><div class="stars_active" style="width:72px"></div></div> </td></tr></tbody></table>-->
-									<!--<div class="count_commentar">
-									Comments (13) </div>-->
-									<p class="readmore"><a target="_parent" href="/catalog/product/{{ product.id }}/" title="{{ product.name }}">Подробнее</a></p>
 								</div>
 							</div>
 						</div>
