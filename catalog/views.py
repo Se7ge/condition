@@ -102,7 +102,9 @@ def search(request):
         {'producers': Producers.objects.all(),
         'types': Types.objects.all(),
 	    'type': _type,
-        'products': products,},
+        'products': products,
+        'where': where,
+        },
         context_instance=RequestContext(request)
     )
 
