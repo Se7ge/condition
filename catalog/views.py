@@ -111,10 +111,10 @@ def search_form(request):
     return render_to_response(template_name, 
         {'types': Types.objects.all(),
         'producers': Producers.objects.all(),
-        'min_price': Products.objects.all().aggregate(Min('price'))['price__min'],
-        'max_price': Products.objects.all().aggregate(Max('price'))['price__max'],
-        'min_area': Products.objects.all().aggregate(Min('area'))['area__min'],
-        'max_area': Products.objects.all().aggregate(Max('area'))['area__max'],
+        'min_price': float(Products.objects.all().aggregate(Min('price'))['price__min']),
+        'max_price': float(Products.objects.all().aggregate(Max('price'))['price__max']),
+        'min_area': float(Products.objects.all().aggregate(Min('area'))['area__min']),
+        'max_area': float(Products.objects.all().aggregate(Max('area'))['area__max']),
         },
         context_instance=RequestContext(request)
     )
