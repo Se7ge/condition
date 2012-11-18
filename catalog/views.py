@@ -78,8 +78,9 @@ def show_series(request, type_id, producer_id):
 def search(request):
     template_name = 'catalog/search_result.html'
     where = {}
+    type_id = int(request.POST['type_id'])
 
-    if type_id = int(request.POST['type_id']):
+    if type_id:
         _type = Types.objects.get(pk=int(type_id))
         where['series__types_id'] = type_id
     else:
