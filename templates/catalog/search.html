@@ -52,19 +52,19 @@
                             <input type="text" id="price_to" name="price_to" readonly style="width:30%;border: 0; color: #f6931f; font-weight: bold;" />
 
                             <script>
-                                $(function() {
-                                    $( "#price-range" ).slider({
+                                jQuery(function() {
+                                    jQuery( "#price-range" ).slider({
                                         range: true,
                                         min: {{ min_price|floatformat }},
                                         max: {{ max_price|floatformat }},
                                         values: [ {{ min_price|floatformat }}, {{ max_price|floatformat }} ],
                                         slide: function( event, ui ) {
-                                            $( "#price_from" ).val( ui.values[ 0 ]);
-                                            $( "#price_to" ).val( ui.values[ 1 ] );
+                                            jQuery( "#price_from" ).val( ui.values[ 0 ]);
+                                            jQuery( "#price_to" ).val( ui.values[ 1 ] );
                                         }
                                     });
-                                    $( "#price_from" ).val( $( "#price-range" ).slider( "values", 0 ));
-                                    $( "#price_to" ).val(  $( "#price-range" ).slider( "values", 1 ) );
+                                    jQuery( "#price_from" ).val( jQuery( "#price-range" ).slider( "values", 0 ));
+                                    jQuery( "#price_to" ).val(  jQuery( "#price-range" ).slider( "values", 1 ) );
                                 });
                             </script>
                         </td>
@@ -78,19 +78,19 @@
                             <input type="text" id="area_from" name="price_from" readonly style="width:30%;border: 0; color: #f6931f; font-weight: bold;" /> -
                             <input type="text" id="area_to" name="price_to" readonly style="width:30%;border: 0; color: #f6931f; font-weight: bold;" />
                             <script>
-                                $(function() {
-                                    $( "#area-range" ).slider({
+                                jQuery(function() {
+                                    jQuery( "#area-range" ).slider({
                                         range: true,
                                         min: {{ min_area|floatformat }},
                                         max: {{ max_area|floatformat }},
                                         values: [ {{ min_area|floatformat }}, {{ max_area|floatformat }} ],
                                         slide: function( event, ui ) {
-                                            $( "#area_from" ).val( ui.values[ 0 ]);
-                                            $( "#area_to" ).val( ui.values[ 1 ] );
+                                            jQuery( "#area_from" ).val( ui.values[ 0 ]);
+                                            jQuery( "#area_to" ).val( ui.values[ 1 ] );
                                         }
                                     });
-                                    $( "#area_from" ).val( $( "#area-range" ).slider( "values", 0 ));
-                                    $( "#area_to" ).val(  $( "#area-range" ).slider( "values", 1 ) );
+                                    jQuery( "#area_from" ).val( jQuery( "#area-range" ).slider( "values", 0 ));
+                                    jQuery( "#area_to" ).val(  jQuery( "#area-range" ).slider( "values", 1 ) );
                                 });
                             </script>
                         </td>
