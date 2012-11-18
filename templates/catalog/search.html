@@ -53,9 +53,9 @@
                                 $(function() {
                                     $( "#price-range" ).slider({
                                         range: true,
-                                        min: {{ min_price }},
-                                        max: {{ max_price }},
-                                        values: [ {{ min_price }}, {{ max_price }} ],
+                                        min: {{ min_price|floatformat }},
+                                        max: {{ max_price|floatformat }},
+                                        values: [ {{ min_price|floatformat }}, {{ max_price|floatformat }} ],
                                         slide: function( event, ui ) {
                                             $( "#price_from" ).val( ui.values[ 0 ]);
                                             $( "#price_to" ).val( ui.values[ 1 ] );
@@ -78,9 +78,9 @@
                                 $(function() {
                                     $( "#area-range" ).slider({
                                         range: true,
-                                        min: {{ min_price }},
-                                        max: {{ max_price }},
-                                        values: [ {{ min_price }}, {{ max_price }} ],
+                                        min: {{ min_area|floatformat }},
+                                        max: {{ max_area|floatformat }},
+                                        values: [ {{ min_area|floatformat }}, {{ max_area|floatformat }} ],
                                         slide: function( event, ui ) {
                                             $( "#area_from" ).val( ui.values[ 0 ]);
                                             $( "#area_to" ).val( ui.values[ 1 ] );
