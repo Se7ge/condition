@@ -88,7 +88,7 @@ def search(request):
 
     where['name__icontains'] = request.POST['search']
 
-    if request.POST['extended']:
+    if 'extended' in request.POST and request.POST['extended']:
         if request.POST['producer_id']:
             where['series__producer_id'] = int(request.POST['producer_id'])
         where['price__gte'] = request.POST['price_from']
