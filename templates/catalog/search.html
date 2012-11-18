@@ -1,104 +1,102 @@
 {% extends "base.html" %}
 
 <div class="padding">
-<div id="system-message-container"></div>
     <div class="jshop">
-        <form method="post" name="form_ad_search" action="/catalog/search/result">
-            <input type="hidden" name="setsearchdata" value="1">
-            <input type="hidden" name="extended" value="1">
-            <fieldset>
-                <legend>Расширенный поиск</legend>
-                <table cellspacing="0" cellpadding="6" class="jshop jshop_searchform">
-                    <tbody>
-                        <tr>
-                            <td class="name">Название:</td>
-                            <td>
-                                <input type="text" style="width:300px" class="inputbox" name="search">
-                            </td>
-                        </tr>
-                        {% if types %}
-                        <tr>
-                            <td class="name">Типы кондиционеров:</td>
-                            <td>
-                                <select size="1" class="inputbox" name="type_id" id="type_id">
-                                <option value="0">Все типы</option>
-                                {% for type in types %}
-                                <option value="{{ type.id }}">{{ type.name }}</option>
-                                {% endfor %}
-                                </select>
-                            </td>
-                        </tr>
-                        {% endif %}
-                        {% if producers %}
-                        <tr>
-                            <td class="name">Производители:</td>
-                            <td>
-                                <select size="1" class="inputbox" name="producer_id" id="producer_id">
-                                <option value="0">Любой производитель</option>
-                                {% for producer in producers %}
-                                <option value="{{ producer.id }}">{{ producer.name }}</option>
-                                {% endfor %}
-                                </select>
-                            </td>
-                        </tr>
-                        {% endif %}
-                        <tr>
-                            <td class="name">
-                            Цена (руб.):
-                            </td>
-                            <td>
-                                <input type="text" id="price_from" name="price_from" style="border: 0; color: #f6931f; font-weight: bold;" /> -
-                                <input type="text" id="price_to" name="price_to" style="border: 0; color: #f6931f; font-weight: bold;" />
-                                <script>
-                                    $(function() {
-                                        $( "#price-range" ).slider({
-                                            range: true,
-                                            min: {{ min_price }},
-                                            max: {{ max_price }},
-                                            values: [ {{ min_price }}, {{ max_price }} ],
-                                            slide: function( event, ui ) {
-                                                $( "#price_from" ).val( ui.values[ 0 ]);
-                                                $( "#price_to" ).val( ui.values[ 1 ] );
-                                            }
-                                        });
-                                        $( "#price_from" ).val( $( "#price-range" ).slider( "values", 0 ));
-                                        $( "#price_to" ).val(  $( "#price-range" ).slider( "values", 1 ) );
+    <form method="post" name="form_ad_search" action="/catalog/search/result">
+        <input type="hidden" name="setsearchdata" value="1">
+        <input type="hidden" name="extended" value="1">
+        <fieldset>
+            <legend>Расширенный поиск</legend>
+            <table cellspacing="0" cellpadding="6" class="jshop jshop_searchform">
+                <tbody>
+                    <tr>
+                        <td class="name">Название:</td>
+                        <td>
+                            <input type="text" style="width:300px" class="inputbox" name="search">
+                        </td>
+                    </tr>
+                    {% if types %}
+                    <tr>
+                        <td class="name">Типы кондиционеров:</td>
+                        <td>
+                            <select size="1" class="inputbox" name="type_id" id="type_id">
+                            <option value="0">Все типы</option>
+                            {% for type in types %}
+                            <option value="{{ type.id }}">{{ type.name }}</option>
+                            {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% if producers %}
+                    <tr>
+                        <td class="name">Производители:</td>
+                        <td>
+                            <select size="1" class="inputbox" name="producer_id" id="producer_id">
+                            <option value="0">Любой производитель</option>
+                            {% for producer in producers %}
+                            <option value="{{ producer.id }}">{{ producer.name }}</option>
+                            {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <td class="name">
+                        Цена (руб.):
+                        </td>
+                        <td>
+                            <input type="text" id="price_from" name="price_from" style="border: 0; color: #f6931f; font-weight: bold;" /> -
+                            <input type="text" id="price_to" name="price_to" style="border: 0; color: #f6931f; font-weight: bold;" />
+                            <script>
+                                $(function() {
+                                    $( "#price-range" ).slider({
+                                        range: true,
+                                        min: {{ min_price }},
+                                        max: {{ max_price }},
+                                        values: [ {{ min_price }}, {{ max_price }} ],
+                                        slide: function( event, ui ) {
+                                            $( "#price_from" ).val( ui.values[ 0 ]);
+                                            $( "#price_to" ).val( ui.values[ 1 ] );
+                                        }
                                     });
-                                </script>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="name">
-                                Площадь (кв.м):
-                            </td>
-                            <td>
-                                <input type="text" id="area_from" name="price_from" style="border: 0; color: #f6931f; font-weight: bold;" /> -
-                                <input type="text" id="area_to" name="price_to" style="border: 0; color: #f6931f; font-weight: bold;" />
-                                <script>
-                                    $(function() {
-                                        $( "#area-range" ).slider({
-                                            range: true,
-                                            min: {{ min_price }},
-                                            max: {{ max_price }},
-                                            values: [ {{ min_price }}, {{ max_price }} ],
-                                            slide: function( event, ui ) {
-                                                $( "#area_from" ).val( ui.values[ 0 ]);
-                                                $( "#area_to" ).val( ui.values[ 1 ] );
-                                            }
-                                        });
-                                        $( "#area_from" ).val( $( "#area-range" ).slider( "values", 0 ));
-                                        $( "#area_to" ).val(  $( "#area-range" ).slider( "values", 1 ) );
+                                    $( "#price_from" ).val( $( "#price-range" ).slider( "values", 0 ));
+                                    $( "#price_to" ).val(  $( "#price-range" ).slider( "values", 1 ) );
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="name">
+                            Площадь (кв.м):
+                        </td>
+                        <td>
+                            <input type="text" id="area_from" name="price_from" style="border: 0; color: #f6931f; font-weight: bold;" /> -
+                            <input type="text" id="area_to" name="price_to" style="border: 0; color: #f6931f; font-weight: bold;" />
+                            <script>
+                                $(function() {
+                                    $( "#area-range" ).slider({
+                                        range: true,
+                                        min: {{ min_price }},
+                                        max: {{ max_price }},
+                                        values: [ {{ min_price }}, {{ max_price }} ],
+                                        slide: function( event, ui ) {
+                                            $( "#area_from" ).val( ui.values[ 0 ]);
+                                            $( "#area_to" ).val( ui.values[ 1 ] );
+                                        }
                                     });
-                                </script>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="list_characteristics" colspan="2"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </fieldset>
-            <div style="padding:2px;"><input type="submit" value="Найти" class="button"></div>
-        </form>
-    </div>
+                                    $( "#area_from" ).val( $( "#area-range" ).slider( "values", 0 ));
+                                    $( "#area_to" ).val(  $( "#area-range" ).slider( "values", 1 ) );
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="list_characteristics" colspan="2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <div style="padding:2px;"><input type="submit" value="Найти" class="button"></div>
+    </form>
 </div>
