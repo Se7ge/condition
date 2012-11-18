@@ -47,8 +47,10 @@
                         Цена (руб.):
                         </td>
                         <td>
+                            <div id="price-range"></div>
                             <input type="text" id="price_from" name="price_from" readonly style="width:30%;border: 0; color: #f6931f; font-weight: bold;" /> -
                             <input type="text" id="price_to" name="price_to" readonly style="width:30%;border: 0; color: #f6931f; font-weight: bold;" />
+
                             <script>
                                 $(function() {
                                     $( "#price-range" ).slider({
@@ -65,7 +67,6 @@
                                     $( "#price_to" ).val(  $( "#price-range" ).slider( "values", 1 ) );
                                 });
                             </script>
-                            <div id="price-range"></div>
                         </td>
                     </tr>
                     <tr>
@@ -73,6 +74,7 @@
                             Площадь (кв.м):
                         </td>
                         <td>
+                            <div id="area-range"></div>
                             <input type="text" id="area_from" name="price_from" readonly style="width:30%;border: 0; color: #f6931f; font-weight: bold;" /> -
                             <input type="text" id="area_to" name="price_to" readonly style="width:30%;border: 0; color: #f6931f; font-weight: bold;" />
                             <script>
@@ -91,7 +93,6 @@
                                     $( "#area_to" ).val(  $( "#area-range" ).slider( "values", 1 ) );
                                 });
                             </script>
-                            <div id="area-range"></div>
                         </td>
                     </tr>
                     <tr>
