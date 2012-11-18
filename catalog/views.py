@@ -89,14 +89,15 @@ def search(request):
     where['name__icontains'] = request.POST['search']
 
     if 'extended' in request.POST and request.POST['extended']:
-        if request.POST['producer_id']:
+        producer_id = int(request.POST['producer_id'])
+        if producer_id:
             where['series__producer_id'] = int(request.POST['producer_id'])
-        where['price__gte'] = request.POST['price_from']
-        where['price__lte'] = request.POST['price_to']
-        where['area__gte'] = request.POST['area_from']
-        where['area__lte'] = request.POST['area_to']
+        where['price__gte'] = float(request.POST['price_from'])
+        where['price__lte'] = float(request.POST['price_to'])
+        where['area__gte'] = float(request.POST['area_from'])
+        where['area__lte'] = float(request.POST['area_to'])
 
-    raise Exception('Unknown template variable %r ' % (where))
+#    raise Exception('Unknown template variable %r ' % (where))
     products = Products.objects.select_related().filter(**where)
 
     return render_to_response(template_name,
