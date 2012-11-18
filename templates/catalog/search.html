@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
+{% block content %}
 <div class="padding">
-    <div class="moduletable">
+    <div class="jshop">
     <form method="post" name="form_ad_search" action="/catalog/search/result">
         <input type="hidden" name="setsearchdata" value="1">
         <input type="hidden" name="extended" value="1">
@@ -100,3 +101,4 @@
         <div style="padding:2px;"><input type="submit" value="Найти" class="button"></div>
     </form>
 </div>
+{% endblock %}
