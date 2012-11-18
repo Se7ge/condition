@@ -8,4 +8,5 @@ local_settings.py
 /static/
 /media/
 /uploads/
+.idea/
 */migrations/
