@@ -97,7 +97,6 @@ def search(request):
         where['area__gte'] = float(request.POST['area_from'])
         where['area__lte'] = float(request.POST['area_to'])
 
-#    raise Exception('Unknown template variable %r ' % (where))
     products = Products.objects.select_related().filter(**where)
 
     return render_to_response(template_name,
