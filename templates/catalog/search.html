@@ -4,6 +4,7 @@
 <div class="padding">
     <div class="jshop">
     <form method="post" name="form_ad_search" action="/catalog/search/result">
+        {% csrf_token %}
         <input type="hidden" name="setsearchdata" value="1">
         <input type="hidden" name="extended" value="1">
         <fieldset>
