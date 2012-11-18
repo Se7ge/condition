@@ -75,7 +75,7 @@ def show_series(request, type_id, producer_id):
     )
 
 def search(request):
-    template_name = 'catalog/search.html'
+    template_name = 'catalog/search_result.html'
     search = request.POST['search']
     type_id = int(request.POST['type_id'])
     if type_id:
@@ -93,3 +93,9 @@ def search(request):
         context_instance=RequestContext(request)
     )
 
+def search_form(request):
+    template_name = 'catalog/search.html'
+    return render_to_response(template_name, 
+    {'types': Types.objects.all(),
+    'producers': Producers.objects.all(),},
+    context_instance=RequestContext(request))

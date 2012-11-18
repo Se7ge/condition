@@ -7,4 +7,5 @@ local_settings.py
 *.gif
 /static/
 /media/
+/uploads/
 */migrations/
