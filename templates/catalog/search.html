@@ -55,6 +55,7 @@
                                 jQuery(function() {
                                     jQuery( "#price-range" ).slider({
                                         range: true,
+                                        step: 5,
                                         min: {{ min_price|floatformat }},
                                         max: {{ max_price|floatformat }},
                                         values: [ {{ min_price|floatformat }}, {{ max_price|floatformat }} ],
