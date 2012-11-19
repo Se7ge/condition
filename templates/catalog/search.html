@@ -55,7 +55,6 @@
                                 jQuery(function() {
                                     jQuery( "#price-range" ).slider({
                                         range: true,
-                                        step: 5,
                                         min: {{ min_price|floatformat }},
                                         max: {{ max_price|floatformat }},
                                         values: [ {{ min_price|floatformat }}, {{ max_price|floatformat }} ],
@@ -82,6 +81,7 @@
                                 jQuery(function() {
                                     jQuery( "#area-range" ).slider({
                                         range: true,
+                                        step: 5,
                                         min: {{ min_area|floatformat }},
                                         max: {{ max_area|floatformat }},
                                         values: [ {{ min_area|floatformat }}, {{ max_area|floatformat }} ],
@@ -104,5 +104,6 @@
         </fieldset>
         <div style="padding:2px;"><input type="submit" value="Найти" class="button"></div>
     </form>
+</div>
 </div>
 {% endblock %}
