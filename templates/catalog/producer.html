@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-
+{% block title %}{{ producer.name }}{% endblock %}
+{% block description %}{{ producer.description|striptags }}{% endblock %}
 {% block content %}
 <div class="moduletable ">
 	<div class="moduletable ">

@@ -12,7 +12,8 @@ def show_catalog(request):
     template_name = 'catalog/catalog.html'
     return render_to_response(template_name, 
         {'producers': Producers.objects.all(),
-        'types': Types.objects.all(),},
+        'types': Types.objects.all(),
+	'page_title': "Производители",},
         context_instance=RequestContext(request)
         )
 
@@ -32,8 +33,10 @@ def show_main(request):
 def show_producer(request, id):
     template_name = 'catalog/producer.html'
     series = Series.objects.filter(producer_id = int(id))
+    producer = Producers.objects.get(pk=int(id))
     return render_to_response(template_name, 
-        {'producer': Producers.objects.get(pk=int(id)),
+        {'producer': producer,
+	'page_title': producer.name,
         'producers': Producers.objects.all(),
         'types': Types.objects.all(),
         'producers_types': Types.objects.filter(pk__in=series.values_list('types_id', flat=True)),
@@ -43,8 +46,9 @@ def show_producer(request, id):
 
 def show_product(request, id):
     template_name = 'catalog/product.html'
+    product = Products.objects.get(pk=int(id))
     return render_to_response(template_name, 
-        {'product': Products.objects.get(pk=int(id)),
+        {'product': product,
         'producers': Producers.objects.all(),
         'types': Types.objects.all(),},
         context_instance=RequestContext(request)
