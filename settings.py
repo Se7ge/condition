@@ -65,6 +65,7 @@ MEDIA_URL = '/media/'
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static').replace('\\','/')
 CKEDITOR_UPLOAD_PATH = os.path.join(os.path.dirname(__file__), 'uploads').replace('\\','/')
+CKEDITOR_UPLOAD_PREFIX = "/uploads/"
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
