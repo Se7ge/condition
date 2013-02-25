@@ -23,7 +23,13 @@ class ProducersAdmin(admin.ModelAdmin):
     form = ProducersAdminForm
     list_display = ('name', 'ordernum')
 
+class TypesAdminForm(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorWidget())
+    class Meta:
+    	model = Types
+
 class TypesAdmin(admin.ModelAdmin):
+    form = TypesAdminForm
     list_display = ('name', 'ordernum')
 
 class SeriesAdminForm(forms.ModelForm):
