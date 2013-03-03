@@ -143,6 +143,7 @@ INSTALLED_APPS = (
     'condition.ventilation',
     'condition.news',
     'condition.services',
+    'condition.prepared',
     'south',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
