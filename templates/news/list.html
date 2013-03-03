@@ -7,9 +7,9 @@
     </div>
     {% if news_list %}
         {% for news in news_list %}
-        <div class="ice-row" style="width:50%">
+        <div class="ice-row">
             <div class="lof-inner">
-                <h4 class="heading"><a target="_parent" href="/news/{{ news.id }}.html" title="{{ news.title }}">{{ news.title }}</a></h4>
+                <h4><a target="_parent" href="/news/{{ news.id }}.html" title="{{ news.title }}">{{ news.title }}</a></h4>
                 <div class="carousel_content">{{ news.brief|safe }}</div>
             </div>
         </div>
