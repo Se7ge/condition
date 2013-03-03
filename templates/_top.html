@@ -52,7 +52,23 @@ return ret = (pattern.test(value)) ? (true) : (false);
 <div id="nav-wrapper">
 <div class="icemegamenu">
 <ul id="icemegamenu">
-<li id="iceMenu_435" class="iceMenuLiLevel_1"><a href="/" class=" iceMenuTitle"><span class="icemega_title icemega_nosubtitle">Главная</span></a></li>
+<li id="iceMenu_435" class="iceMenuLiLevel_1"><a class=" iceMenuTitle"><span class="icemega_title icemega_nosubtitle">Готовые решения</span></a>
+    {% if prepared %}
+        <ul class="icesubMenu sub_level_1" style="width:282px">
+            <li>
+                <div style="float:left;width:270px" class="iceCols">
+                    <ul>
+                        {% for item in prepared %}
+                            <li id="iceMenu_{{ item.id }}" class="iceMenuLiLevel_2">
+                                <a href="/prepared/{{ item.id }}/" class="iceMenuTitle subParentBtn mainMenuParentBtnFocused subMenuParentBtn" tabindex="-1"><span class="icemega_title icemega_nosubtitle">{{ item.name }}</span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    {% endif %}
+</li>
 <!--<li id="iceMenu_294" class="iceMenuLiLevel_1 parent"><a href="/about/" class=" iceMenuTitle"><span class="icemega_title">О компании</span><span class="icemega_desc">О нас!</span></a></li>-->
 <li id="iceMenu_480" class="iceMenuLiLevel_1"><a href="/catalog/" class=" iceMenuTitle"><span class="icemega_title">Каталог продукции</span><span class="icemega_desc">Наши товары</span></a></li>
 <li id="iceMenu_536" class="iceMenuLiLevel_1"><a href="/about/payment/" class=" iceMenuTitle"><span class="icemega_title">Оплата и доставка</span><span class="icemega_desc">Обратите внимание!</span></a></li>
