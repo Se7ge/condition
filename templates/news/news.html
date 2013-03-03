@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ news.title }}{% endblock %}
+{% block description %}{{ news.brief|striptags }}{% endblock %}
+{% block content %}
+    <div class="ice-tabs-candy ice-bottom-sl-candy">
+        <div class="ice-main-wapper" style="width:685px;">
+            <div class="ice-main-item" style="display:block;">
+                <div class="ice-description">
+                    <h3 class="ice-title">{{ news.title }}</h3>
+                    <div class="ice-description2">
+                        <p>{{ news.description|safe }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

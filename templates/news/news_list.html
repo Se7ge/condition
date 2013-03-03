@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="moduletable ">
+        <div class="moduletable ">
+            <h3 class="mod-title">Обзоры<em class="col-module-header-arrow"></em></h3>
+        </div>
+    </div>
+    {% if news_list %}
+        {% for news in news_list %}
+        <div class="ice-row" style="width:50%">
+            <div class="lof-inner">
+                <h4 class="heading"><a target="_parent" href="/news/{{ news.id }}.html" title="{{ news.title }}">{{ news.title }}</a></h4>
+                <div class="carousel_content">{{ news.brief|safe }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

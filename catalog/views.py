@@ -8,14 +8,14 @@ from django.template import Template, context, RequestContext
 from django.contrib.flatpages.models import FlatPage
 from django.db.models import Max, Min
 
+
 def show_catalog(request):
     template_name = 'catalog/catalog.html'
-    return render_to_response(template_name, 
-        {'producers': Producers.objects.all(),
-        'types': Types.objects.all(),
-	'page_title': "Производители",},
-        context_instance=RequestContext(request)
-        )
+    return render_to_response(template_name, {'producers': Producers.objects.all(),
+                                              'types': Types.objects.all(),
+                                              'page_title': "Производители",},
+                              context_instance=RequestContext(request)
+    )
 
 def show_main(request):
     template_name = 'catalog/show_main.html'

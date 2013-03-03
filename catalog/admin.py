@@ -4,38 +4,50 @@ from django.contrib import admin
 from ckeditor.widgets import CKEditorWidget
 from condition.catalog.models import Types, Producers, Products, Series
 
+
 class ProductsAdminForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
+
     class Meta:
-	model = Products
+        model = Products
+
 
 class ProductsAdmin(admin.ModelAdmin):
     form = ProductsAdminForm
     list_display = ('name', 'series', 'price', 'area')
     search_fields = ('name', 'description')
 
+
 class ProducersAdminForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
+
     class Meta:
-	model = Producers
+        model = Producers
+
 
 class ProducersAdmin(admin.ModelAdmin):
     form = ProducersAdminForm
     list_display = ('name', 'ordernum')
 
+
 class TypesAdminForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
+
     class Meta:
-    	model = Types
+        model = Types
+
 
 class TypesAdmin(admin.ModelAdmin):
     form = TypesAdminForm
     list_display = ('name', 'ordernum')
 
+
 class SeriesAdminForm(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
+
     class Meta:
-	model = Series
+        model = Series
+
 
 class SeriesAdmin(admin.ModelAdmin):
     form = SeriesAdminForm

@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'', include('condition.thermal.urls')),
     url(r'', include('condition.ventilation.urls')),
     url(r'', include('condition.services.urls')),
+    url(r'', include('condition.news.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
