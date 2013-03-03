@@ -11,7 +11,9 @@
             <div class="ice-row">
                 <div class="lof-inner">
                     <h4><a target="_parent" href="/news/{{ news.id }}.html" title="{{ news.title }}">{{ news.title }}</a></h4>
-                    <div class="carousel_content">{{ news.brief|safe }}</div>
+                    <div class="carousel_content">{{ news.brief|safe }}
+                        <p class="readmore"><a target="_parent" href="/news/{{ news.id }}.html" title="Читать полный обзор">Подробнее</a></p>
+                    </div>
                 </div>
             </div>
         </div>
