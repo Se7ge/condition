@@ -152,10 +152,11 @@ INSTALLED_APPS = (
 
 CKEDITOR_CONFIGS = {
     'default': {
-	'skin': 'kama',
+        'skin': 'kama',
         'toolbar': 'Full',
         'height': 400,
         'width': 860,
+        'autoParagraph': False
     },
 }
 
