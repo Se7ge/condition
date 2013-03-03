@@ -8,5 +8,5 @@ from django.template import Template, context, RequestContext
 def show_prepared(request, id):
     template_name = 'prepared/prepared.html'
     return render_to_response(template_name,
-                              {'prepared': Prepared.objects.get(pk=int(id))},
+                              {'prepared_item': Prepared.objects.get(pk=int(id))},
                               context_instance=RequestContext(request))

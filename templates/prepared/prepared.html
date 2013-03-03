@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}{{ prepared.name }}{% endblock %}
+{% block title %}{{ prepared_item.name }}{% endblock %}
 {% block content %}
 <div class="ice-tabs-candy ice-bottom-sl-candy">
 <div class="ice-main-wapper" style="width:685px;">
 <div class="ice-main-item" style="display:block;">
 <div class="ice-description">
-<h3 class="ice-title">{{ prepared.name }}</h3>
-<div class="ice-description2"><p>{{ prepared.description|safe }}</p></div>
+<h3 class="ice-title">{{ prepared_item.name }}</h3>
+<div class="ice-description2"><p>{{ prepared_item.description|safe }}</p></div>
 </div>
 </div>
 </div>
