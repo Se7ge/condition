@@ -10,7 +10,6 @@
 </div>
 <div id="topmenu">
 <ul class="menu">
-<li class="item-505"><a href="/" title="На главную">На главную</a></li>
 <li class="item-506"><a href="/about/contacts/" >Свяжитесь с нами!</a></li></ul>
 </div>
 </div>
@@ -52,6 +51,7 @@ return ret = (pattern.test(value)) ? (true) : (false);
 <div id="nav-wrapper">
 <div class="icemegamenu">
 <ul id="icemegamenu">
+<li id="iceMenu_400" class="iceMenuLiLevel_1"><a class="iceMenuTitle mainParentBtn mainMenuParentBtn" href="/" title="На главную" style="padding: 0 15px 10px"><span style="background: url('{{ STATIC_URL }}images/home.png') no-repeat; display: block; height: 40px; width: 40px;"></span></a></li>
 <li id="iceMenu_435" class="iceMenuLiLevel_1"><a class=" iceMenuTitle"><span class="icemega_title icemega_nosubtitle">Готовые решения</span></a>
     {% if prepared %}
         <ul class="icesubMenu sub_level_1" style="width:282px">
@@ -60,7 +60,7 @@ return ret = (pattern.test(value)) ? (true) : (false);
                     <ul>
                         {% for item in prepared %}
                             <li id="iceMenu_{{ item.id }}" class="iceMenuLiLevel_2">
-                                <a href="/prepared/{{ item.id }}/" class="iceMenuTitle subParentBtn mainMenuParentBtnFocused subMenuParentBtn" tabindex="-1"><span class="icemega_title icemega_nosubtitle">{{ item.name }}</span></a>
+                                <a href="/prepared/{{ item.id }}/" class="iceMenuTitle subParentBtn mainMenuParentBtnFocused subMenuParentBtn" tabindex="-1" title="{{ item.name }}"><span class="icemega_title icemega_nosubtitle">{{ item.name }}</span></a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -70,8 +70,8 @@ return ret = (pattern.test(value)) ? (true) : (false);
     {% endif %}
 </li>
 <!--<li id="iceMenu_294" class="iceMenuLiLevel_1 parent"><a href="/about/" class=" iceMenuTitle"><span class="icemega_title">О компании</span><span class="icemega_desc">О нас!</span></a></li>-->
-<li id="iceMenu_480" class="iceMenuLiLevel_1"><a href="/catalog/" class=" iceMenuTitle"><span class="icemega_title">Каталог</span><span class="icemega_desc">Наши товары</span></a></li>
-<li id="iceMenu_536" class="iceMenuLiLevel_1"><a href="/about/payment/" class=" iceMenuTitle"><span class="icemega_title">Оплата и доставка</span><span class="icemega_desc">Обратите внимание!</span></a></li>
+<li id="iceMenu_480" class="iceMenuLiLevel_1"><a href="/catalog/" class=" iceMenuTitle" title="Каталог"><span class="icemega_title">Каталог</span><span class="icemega_desc">Наши товары</span></a></li>
+<li id="iceMenu_536" class="iceMenuLiLevel_1"><a href="/about/payment/" class=" iceMenuTitle" title="Оплата и доставка"><span class="icemega_title">Оплата и доставка</span><span class="icemega_desc">Обратите внимание!</span></a></li>
 <li id="iceMenu_487" class="iceMenuLiLevel_1 parent"><a class="iceMenuTitle mainParentBtn mainMenuParentBtn"><span class="icemega_title icemega_nosubtitle">Услуги</span></a>
 {% if services %}
 <ul class="icesubMenu sub_level_1" style="width:282px">
@@ -80,7 +80,7 @@ return ret = (pattern.test(value)) ? (true) : (false);
 <ul>
 {% for service in services %}
 <li id="iceMenu_{{ service.id }}" class="iceMenuLiLevel_2">
-<a href="/services/{{ service.id }}/" class="iceMenuTitle subParentBtn mainMenuParentBtnFocused subMenuParentBtn" tabindex="-1"><span class="icemega_title icemega_nosubtitle">{{ service.name }}</span></a>
+<a href="/services/{{ service.id }}/" class="iceMenuTitle subParentBtn mainMenuParentBtnFocused subMenuParentBtn" tabindex="-1" title="{{ service.name }}"><span class="icemega_title icemega_nosubtitle">{{ service.name }}</span></a>
 </li>
 {% endfor %}
 </ul>
@@ -89,9 +89,9 @@ return ret = (pattern.test(value)) ? (true) : (false);
 </ul>
 {% endif %}
 </li>
-<li id="iceMenu_503" class="iceMenuLiLevel_1"><a href="/news/" class=" iceMenuTitle"><span class="icemega_title">Обзоры</span></a></li>
-<li id="iceMenu_504" class="iceMenuLiLevel_1"><a href="/about/" class=" iceMenuTitle"><span class="icemega_title">О нас</span></a></li>
-<li id="iceMenu_505" class="iceMenuLiLevel_1"><a href="/about/contacts/" class=" iceMenuTitle"><span class="icemega_title">Контакты</span><span class="icemega_desc">Свяжитесь с нами!</span></a></li>
+<li id="iceMenu_503" class="iceMenuLiLevel_1"><a href="/news/" class=" iceMenuTitle" title="Обзоры"><span class="icemega_title">Обзоры</span></a></li>
+<li id="iceMenu_504" class="iceMenuLiLevel_1"><a href="/about/" class=" iceMenuTitle" title="О компании"><span class="icemega_title">О нас</span></a></li>
+<li id="iceMenu_505" class="iceMenuLiLevel_1"><a href="/about/contacts/" class=" iceMenuTitle" title="Контакты"><span class="icemega_title">Контакты</span><span class="icemega_desc">Свяжитесь с нами!</span></a></li>
 </ul></div>
 <script type="text/javascript" defer>
 window.addEvent('domready', function() {
