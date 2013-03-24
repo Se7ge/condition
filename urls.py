@@ -1,5 +1,5 @@
 import os.path
-from seo.admin import register_seo_admin
+from rollyourown.seo.admin import register_seo_admin
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
