@@ -1,9 +1,12 @@
 import os.path
+from seo.admin import register_seo_admin
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from condition.seo import Metadata
 admin.autodiscover()
+register_seo_admin(admin.site, Metadata)
 
 urlpatterns = patterns('',
     #('^$', search),
