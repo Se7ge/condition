@@ -4,9 +4,9 @@ from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-from condition.seo import Metadata
+from condition.seo import SEOMetadata
 admin.autodiscover()
-register_seo_admin(admin.site, Metadata)
+register_seo_admin(admin.site, SEOMetadata)
 
 urlpatterns = patterns('',
     #('^$', search),
