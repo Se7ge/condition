@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import seo
+from rollyourown import seo
 
 
 class Metadata(seo.Metadata):
