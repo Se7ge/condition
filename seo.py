@@ -8,9 +8,6 @@ class Metadata(seo.Metadata):
     keywords = seo.KeywordTag()
 
     class Meta:
-        use_sites = True
-        use_cache = True
-        use_i18n = True
         backends = ('path',)
         verbose_name = "SEO Meta-tag"
         verbose_name_plural = "SEO Meta-tags"
