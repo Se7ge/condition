@@ -11,7 +11,6 @@ class Metadata(seo.Metadata):
         use_sites = True
         use_cache = True
         use_i18n = True
-        seo_models = ('catalog.Products', 'services.Services', 'flatpages.FlatPage')
-        backends = ('path', 'modelinstance', 'model')
+        backends = ('path',)
         verbose_name = "SEO Meta-tag"
         verbose_name_plural = "SEO Meta-tags"
