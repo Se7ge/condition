@@ -1,15 +1,9 @@
-{% load seo %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru" dir="ltr" >
 <head>
-    {% get_metadata as my_meta %}
-    {% if my_meta %}
-        {{ my_meta }}
-    {% else %}
         <title>NWClimate > Кондиционеры, сплит-системы > {% block title %}{{ page_title }}{% endblock %}</title>
         <meta name="keywords" content="{% block keywords %}{{ page_keywords|default:"кондиционеры, сплит-системы спб, купить сплит-систему, купить кондиционер, установка, монтаж, санкт-петербург, ленинградская область, тепловое оборудование" }}{% endblock %}"/>
         <meta name="description" content="{% block description %}{{ page_description|default:"Компания 'NWClimate' осуществляет доставку, установку и сервисное обслуживание систем кондиционирования и вентиляции от ведущих мировых производителей(Daikin, Lessar, Mitsubishi Electric, Panasonic, LG, Midea, QuattroClima, Electrolux, Ballu, Airwell) в Санкт-Петербурге и Ленинградской области" }}{% endblock %}"/>
-    {% endif %}
 {% include "_header.html" %}
 </head>
 <body class="">
