@@ -144,8 +144,9 @@ INSTALLED_APPS = (
     'condition.news',
     'condition.services',
     'condition.prepared',
-    'south',
     'rollyourown.seo',
+    'seo',
+    'south',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

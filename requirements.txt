@@ -1,2 +1,4 @@
 django
 DjangoSEO
+mysql-python
+django-ckeditor
