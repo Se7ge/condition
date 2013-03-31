@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru" dir="ltr" >
 <head>
     {% get_metadata as metadata %}
-    {% if metadata %}
+    {% if metadata.title %}
         {{ metadata }}
     {% else %}
         <title>NWClimate > Кондиционеры, сплит-системы > {% block title %}{{ page_title }}{% endblock %}</title>
