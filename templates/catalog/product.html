@@ -7,7 +7,7 @@
 <div class="ice-main-wapper" style="width:685px;">
 <div class="ice-main-item" style="display:block;">
 <div class="ice-description">
-{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.name }}" alt="{{ product.series.name }} {{ product.name }}">{% endif %}
+{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.series.name }} {{ product.name }}" alt="{{ product.series.name }} {{ product.name }}">{% endif %}
 <h1 class="ice-title">{{ product.name }}</h1>
 <div class="jshop_price">Цена: {{ product.price|floatformat }} руб</div>
 <div class="jshop_price">Площадь: {{ product.area|floatformat }} кв.м</div>
