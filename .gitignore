@@ -1,11 +1,14 @@
 *.log
 *.pot
 *.pyc
-local_settings.py
+settings.py
+settings_local.py
 *.png
 *.jpg
 *.gif
-/static/
+/static/images/
+/static/ckeditor/
+/static/admin/
 /media/
 /uploads/
 .idea/
