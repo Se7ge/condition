@@ -296,4 +296,8 @@ styles.
 #jshopping-mods .moduletable h3.mod-title {
 	margin-bottom:8px;
 	padding-bottom:5px;
-	border-bottom:1px dotted #ccc;}			 
+	border-bottom:1px dotted #ccc;}
+#jshopping-mods .moduletable h1.mod-title {
+	margin-bottom:8px;
+	padding-bottom:5px;
+	border-bottom:1px dotted #ccc;}
