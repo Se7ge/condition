@@ -6,7 +6,6 @@ settings_local.py
 *.png
 *.jpg
 *.gif
-/static/images/
 /static/ckeditor/
 /static/admin/
 /media/
