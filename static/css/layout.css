@@ -92,8 +92,13 @@ this width so you need to change them to.
 		margin:0;}
 		
 	#logo img {
-		float:none;
-		margin:0; }
+    float: none;
+    height: 150px;
+    left: -30px;
+    margin: 0;
+    position: absolute;
+    top: -15px;
+}
 
 
 /* IceJShopping Cart
