@@ -3,7 +3,6 @@
 *.pyc
 settings.py
 settings_local.py
-*.png
 *.jpg
 *.gif
 /static/ckeditor/
