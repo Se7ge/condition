@@ -85,20 +85,20 @@ this width so you need to change them to.
 /* Logo
 ------------*/
 #logo {
-	/*padding:30px 0;*/
+	padding:10px 0;
 	float:left;
-    height: 120px;
+    height: 100px;
 }
 	
 	#logo p {
 		margin:0;}
 
 	#logo a {
-		display: block;height: 120px;}
+		display: block;height: 100px;}
 		
 	#logo img {
     float: none;
-    height: 120px;
+    height: 100px;
     margin: 0;
 }
 
