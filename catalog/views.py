@@ -60,7 +60,7 @@ def send_phone(request):
     message += u'Телефон: %s\r\n' % request.POST.get('phone', u'Не заполнен')
     message += u'Интересующий товар: %s\r\n' % request.META.get('HTTP_REFERER')
     send_mail(u'Запрос звонка с сайта nwclimate.ru',
-              message, 'from@nwclimate.ru',
+              message, 'info@nwclimate.ru',
               [settings.SALES_EMAIL],
               fail_silently=False)
     return HttpResponse(True)
