@@ -47,3 +47,47 @@ span.highlight {
 
 .img-intro-float-none {
 }
+
+
+#system-message {
+    margin-bottom: 10px;
+    padding: 0;
+}
+#system-message > dt {
+    display: none;
+    font-weight: bold;
+}
+#system-message > dd {
+    margin: 0;
+}
+#system-message > dd > ul {
+    background-position: 4px top;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #84A7DB;
+    border-top: 1px solid #84A7DB;
+    color: #0055BB;
+    list-style: none outside none;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+#system-message > dd > ul > li {
+    line-height: 1.5em;
+}
+#system-message > .message > ul {
+    background-color: #C3D2E5;
+}
+#system-message > .error > ul, #system-message > .warning > ul, #system-message > .notice > ul {
+    color: #CC0000;
+}
+#system-message > .error > ul {
+    background-color: #E6C0C0;
+    border-color: #DE7A7B;
+}
+#system-message > .warning > ul {
+    background-color: #E6C8A6;
+    border-color: #FFBB00;
+}
+#system-message > .notice > ul {
+    background-color: #EFE7B8;
+    border-color: #F0DC7E;
+}

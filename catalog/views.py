@@ -7,6 +7,7 @@ from django.shortcuts import render_to_response
 from django.template import Template, context, RequestContext
 from django.contrib.flatpages.models import FlatPage
 from django.db.models import Max, Min
+from django.core.mail import send_mail
 
 
 def show_catalog(request):
@@ -53,6 +54,16 @@ def show_product(request, id):
         'types': Types.objects.all(),},
         context_instance=RequestContext(request)
     )
+
+def send_phone(request):
+    message = u'Имя: %s\r\n' % request.POST.get('name', u'Не заполнено')
+    message += u'Телефон: %s\r\n' % request.POST.get('phone', u'Не заполнен')
+    message += u'Интересующий товар: %s\r\n' % request.META.get('HTTP_REFERER')
+    send_mail(u'Запрос звонка с сайта nwclimate.ru',
+              message, 'from@nwclimate.ru',
+              [settings.SALES_EMAIL],
+              fail_silently=False)
+    return HttpResponse(True)
 
 def show_type(request, id):
     template_name = 'catalog/type.html'

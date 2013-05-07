@@ -4,15 +4,57 @@
 
 {% block content %}
 <div class="ice-tabs-candy ice-bottom-sl-candy">
-<div class="ice-main-wapper" style="width:685px;">
-<div class="ice-main-item" style="display:block;">
-<div class="ice-description">
-{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.series.name }} {{ product.name }}" alt="{{ product.series.name }} {{ product.name }}">{% endif %}
-<h1 class="ice-title">{{ product.name }}</h1>
-<div class="jshop_price">Цена: {{ product.price|floatformat }} руб</div>
-<div class="jshop_price">Площадь: {{ product.area|floatformat }} кв.м</div>
-<div class="ice-description2"><p>{{ product.description|safe }}</p></div>
-</div>	 </div>
-</div>
+    <div class="ice-main-wapper" style="width:685px;">
+        <div class="ice-main-item" style="display:block;">
+            <div class="ice-description">
+                {% if product.image %}<img src="{{ product.image.url }}" title="{{ product.series.name }} {{ product.name }}" alt="{{ product.series.name }} {{ product.name }}">{% endif %}
+                <h1 class="ice-title">{{ product.name }}</h1>
+                <div class="jshop_price">Цена: {{ product.price|floatformat }} руб</div>
+                <div class="jshop_price">Площадь: {{ product.area|floatformat }} кв.м</div>
+                <div class="ice-description2"><p>{{ product.description|safe }}</p></div>
+            </div>
+            <div class="contact-form">
+                <form class="form-validate" method="post" action="" id="contact-form">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Заказать звонок специалиста</legend>
+                        <div id="system-message-container" class="hide">
+                            <dl id="system-message">
+                            <dt class="success">Success</dt>
+                            <dd class="success message">
+                                <ul>
+                                    <li>Спасибо! Ваш запрос отправлен. Наш специалист свяжется с Вами в ближайшее время</li>
+                                </ul>
+                            </dd>
+                            </dl>
+                        </div>
+                        <dl>
+                            <dt><label title="" class="hasTip required" for="jform_contact_name" id="jform_contact_name-lbl">Ваше Имя<span class="star">&nbsp;*</span></label></dt>
+                            <dd><input type="text" name="name" placeholder="Укажите Ваше имя" size="30" class="required" value="" id="jform_contact_name" aria-required="true" required="required"></dd>
+                            <dt><label title="" class="hasTip required" for="jform_contact_phone" id="jform_contact_email-lbl">Номер телефона<span class="star">&nbsp;*</span></label></dt>
+                            <dd><input type="text" name="phone" placeholder="Укажите номер контактного телефона" size="30" value="" id="jform_contact_phone" class="validate-phone required" aria-required="true" required="required"></dd>
+                            <dd><button type="submit" class="button validate">Заказать звонок</button></dd>
+                        </dl>
+                    </fieldset>
+                </form>
+                <script type="text/javascript">
+                    jQuery(document).ready(function(){
+                        jQuery('#contact-form').submit(function() {
+                            var data = {};
+                            jQuery(this).find('input').each(function(){
+                                data[jQuery(this).attr('name')] = jQuery(this).val();
+                            });
+                            jQuery.post("/catalog/product/send_phone/", data, function(res) {
+                                if (res){
+                                    jQuery('#system-message-container').show();
+                                }
+                            });
+                            return false;
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
