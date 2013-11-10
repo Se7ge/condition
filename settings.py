@@ -141,6 +141,7 @@ INSTALLED_APPS = (
     'condition.helpers',
     'condition.catalog',
     'condition.thermal',
+    'condition.purifier',
     'condition.ventilation',
     'condition.news',
     'condition.services',

@@ -92,6 +92,28 @@
 	</div>
 	</div>
 	</div>
+
+	<div class="col-module ">
+	<div class="col-module-style2">
+	<div class="col-module-header">
+	<h3 class="mod-title">Увлажнители, очистители воздуха</h3>
+	<div class="col-module-header-arrow"></div>
+	</div>
+	<div class="col-module-content clearfix">
+	<div class="lofmenu_jshopping">
+	{% if purifier_types %}
+	<ul class='lofmenu'>
+	{% for type in purifier_types %}
+	<li class='lofitem1'>
+	<a href='/purifier/types/{{ type.id }}/' ><span>{{ type.name }}</span></a>
+	</li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+	</div>
+	</div>
+	</div>
+	</div>
 	
 	<div class="col-module ">
 	<div class="col-module-style2">
@@ -114,27 +136,6 @@
 	</div>
 	</div>
 	</div>
-	<!--<div class="col-module ">
-	<div class="col-module">
-	<div class="col-module-content clearfix">
-	<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Ficetheme&amp;width=220&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=true&amp;height=395" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:395px;" allowTransparency="true"></iframe>
-	</div>
-	</div>
-	</div>-->
-	<!--<div class="col-module ">
-	<div class="col-module">
-	<div class="col-module-header">
-	<h3 class="mod-title">Payment Methods</h3>
-	<div class="col-module-header-arrow"></div>
-	</div>
-	<div class="col-module-content clearfix">
-	
-	<div class="custom" >
-	<p>We accept all major credit cards as well as PayPal payments</p>
-	<p style="text-align: center;"><img src="{{ STATIC_URL }}images/cards.jpg" border="0" alt="Credit Cards" width="160" /></p></div>
-	</div>
-	</div>
-	</div>
-	</div> -->
+
 	</div>
 </div>

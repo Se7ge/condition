@@ -2,6 +2,7 @@
 from django.conf import settings
 from condition.catalog.models import Types, Producers, Products
 from condition.thermal.models import Thermal_Types
+from condition.purifier.models import Purifier_Types
 from condition.ventilation.models import Ventilation_Types
 from condition.services.models import Services
 from condition.prepared.models import Prepared
@@ -16,6 +17,7 @@ def show_catalog(request):
     return {'producers': Producers.objects.all(),
             'types': Types.objects.all(),
             'thermal_types': Thermal_Types.objects.all(),
+            'purifier_types': Purifier_Types.objects.all(),
             'ventilation_types': Ventilation_Types.objects.all(),
             'services': Services.objects.all(),
             'prepared': Prepared.objects.all(),

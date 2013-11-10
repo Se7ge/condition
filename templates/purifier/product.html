@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="ice-tabs-candy ice-bottom-sl-candy">
+<div class="ice-main-wapper" style="width:685px;">
+<div class="ice-main-item" style="display:block;">
+<div class="ice-description">
+{% if product.image %}<img src="{{ product.image.url }}" title="{{ product.name }}" alt="{{ product.name }}">{% endif %}
+<h3 class="ice-title">{{ product.name }}</h3>
+<!--<div class="jshop_price">Цена: {{ product.price|floatformat }} руб</div>-->
+<div class="ice-description2"><p>{{ product.description|safe }}</p></div>
+</div>	 </div>
+</div>
+</div>
+{% endblock %}
